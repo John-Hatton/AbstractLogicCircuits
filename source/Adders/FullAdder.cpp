@@ -158,7 +158,9 @@ std::string FullAdder::answer() {
         else
         {
             std::cout << "Something went very wrong..." << std::endl;
+            return "F0FF";
         }
     }
+    return "-1";
 }
 
