@@ -469,12 +469,12 @@ void FourBitRAM::setWordOneBitThreeAnd(AndGate *wordOneBitThreeAnd) {
     FourBitRAM::wordOneBitThreeAnd = wordOneBitThreeAnd;
 }
 
-AndGate *FourBitRAM::getWordTwpBitZeroAnd() const {
-    return wordTwpBitZeroAnd;
+AndGate *FourBitRAM::getWordTwoBitZeroAnd() const {
+    return wordTwoBitZeroAnd;
 }
 
-void FourBitRAM::setWordTwpBitZeroAnd(AndGate *wordTwpBitZeroAnd) {
-    FourBitRAM::wordTwpBitZeroAnd = wordTwpBitZeroAnd;
+void FourBitRAM::setWordTwoBitZeroAnd(AndGate *wordTwpBitZeroAnd) {
+    FourBitRAM::wordTwoBitZeroAnd = wordTwpBitZeroAnd;
 }
 
 AndGate *FourBitRAM::getWordTwoBitOneAnd() const {

@@ -390,9 +390,9 @@ public:
 
     void setWordOneBitThreeAnd(AndGate *wordOneBitThreeAnd);
 
-    AndGate *getWordTwpBitZeroAnd() const;
+    AndGate *getWordTwoBitZeroAnd() const;
 
-    void setWordTwpBitZeroAnd(AndGate *wordTwpBitZeroAnd);
+    void setWordTwoBitZeroAnd(AndGate *wordTwoBitZeroAnd);
 
     AndGate *getWordTwoBitOneAnd() const;
 
