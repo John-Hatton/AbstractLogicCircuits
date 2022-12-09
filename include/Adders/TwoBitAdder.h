@@ -46,6 +46,10 @@ private:
      */
     FullAdder* bitTwoFullAdder;
 
+    bool sumOneOut;
+
+    bool sumTwoOut;
+
 public:
 
     /**
@@ -135,6 +139,6 @@ public:
      * For example with the inputs 01 and 11, the generated result would be "0 0100".
      * See the test cases in the test folder for more examples of this.
      */
-    std::string answer();
+    std::vector<bool> answer();
 
 };

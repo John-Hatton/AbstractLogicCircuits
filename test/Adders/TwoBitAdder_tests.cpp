@@ -22,11 +22,12 @@ TEST(Two_Bit_Adder, TwoBitAdder_00__00_Test)
     myTwoBitAdder->setInputX2(false);
     myTwoBitAdder->setInputY2(false);
 
-    std::string answer = myTwoBitAdder->answer();
+    std::vector<bool> actual = myTwoBitAdder->answer();
 
+    std::vector<bool> expected = {false, false, false};
     // 3. Test
 
-    EXPECT_EQ(answer,"0 0000");
+    EXPECT_EQ(actual, expected);
 
 }
 
@@ -44,11 +45,12 @@ TEST(Two_Bit_Adder, TwoBitAdder_00__01_Test)
     myTwoBitAdder->setInputX2(false);
     myTwoBitAdder->setInputY2(false);
 
-    std::string answer = myTwoBitAdder->answer();
+    std::vector<bool> actual = myTwoBitAdder->answer();
 
+    std::vector<bool> expected = {false, false, true};
     // 3. Test
 
-    EXPECT_EQ(answer,"0 0001");
+    EXPECT_EQ(actual, expected);
 
 }
 TEST(Two_Bit_Adder, TwoBitAdder_01__00_Test)
@@ -65,11 +67,12 @@ TEST(Two_Bit_Adder, TwoBitAdder_01__00_Test)
     myTwoBitAdder->setInputX2(false);
     myTwoBitAdder->setInputY2(false);
 
-    std::string answer = myTwoBitAdder->answer();
+    std::vector<bool> actual = myTwoBitAdder->answer();
 
+    std::vector<bool> expected = {false, false, true};
     // 3. Test
 
-    EXPECT_EQ(answer,"0 0001");
+    EXPECT_EQ(actual, expected);
 
 }
 
@@ -87,11 +90,12 @@ TEST(Two_Bit_Adder, TwoBitAdder_01__01_Test)
     myTwoBitAdder->setInputX2(false);
     myTwoBitAdder->setInputY2(false);
 
-    std::string answer = myTwoBitAdder->answer();
+    std::vector<bool> actual = myTwoBitAdder->answer();
 
+    std::vector<bool> expected = {false, true, false};
     // 3. Test
 
-    EXPECT_EQ(answer,"0 0010");
+    EXPECT_EQ(actual, expected);
 
 }
 TEST(Two_Bit_Adder, TwoBitAdder_00__10_Test)
@@ -108,11 +112,12 @@ TEST(Two_Bit_Adder, TwoBitAdder_00__10_Test)
     myTwoBitAdder->setInputX2(false);
     myTwoBitAdder->setInputY2(true);
 
-    std::string answer = myTwoBitAdder->answer();
+    std::vector<bool> actual = myTwoBitAdder->answer();
 
+    std::vector<bool> expected = {false, true, false};
     // 3. Test
 
-    EXPECT_EQ(answer,"0 0010");
+    EXPECT_EQ(actual, expected);
 
 }
 TEST(Two_Bit_Adder, TwoBitAdder_10__00_Test)
@@ -129,11 +134,12 @@ TEST(Two_Bit_Adder, TwoBitAdder_10__00_Test)
     myTwoBitAdder->setInputX2(true);
     myTwoBitAdder->setInputY2(false);
 
-    std::string answer = myTwoBitAdder->answer();
+    std::vector<bool> actual = myTwoBitAdder->answer();
 
+    std::vector<bool> expected = {false, true, false};
     // 3. Test
 
-    EXPECT_EQ(answer,"0 0010");
+    EXPECT_EQ(actual, expected);
 
 }
 
@@ -151,11 +157,12 @@ TEST(Two_Bit_Adder, TwoBitAdder_10__10_Test)
     myTwoBitAdder->setInputX2(true);
     myTwoBitAdder->setInputY2(true);
 
-    std::string answer = myTwoBitAdder->answer();
+    std::vector<bool> actual = myTwoBitAdder->answer();
 
+    std::vector<bool> expected = {true, false, false};
     // 3. Test
 
-    EXPECT_EQ(answer,"0 0100");
+    EXPECT_EQ(actual, expected);
 
 }
 
@@ -173,11 +180,12 @@ TEST(Two_Bit_Adder, TwoBitAdder_11__10_Test)
     myTwoBitAdder->setInputX2(true);
     myTwoBitAdder->setInputY2(true);
 
-    std::string answer = myTwoBitAdder->answer();
+    std::vector<bool> actual = myTwoBitAdder->answer();
 
+    std::vector<bool> expected = {true, false, true};
     // 3. Test
 
-    EXPECT_EQ(answer,"0 0101");
+    EXPECT_EQ(actual, expected);
 
 }
 
@@ -195,11 +203,12 @@ TEST(Two_Bit_Adder, TwoBitAdder_10__11_Test)
     myTwoBitAdder->setInputX2(true);
     myTwoBitAdder->setInputY2(true);
 
-    std::string answer = myTwoBitAdder->answer();
+    std::vector<bool> actual = myTwoBitAdder->answer();
 
+    std::vector<bool> expected = {true, false, true};
     // 3. Test
 
-    EXPECT_EQ(answer,"0 0101");
+    EXPECT_EQ(actual, expected);
 
 }
 
@@ -217,10 +226,11 @@ TEST(Two_Bit_Adder, TwoBitAdder_11__11_Test)
     myTwoBitAdder->setInputX2(true);
     myTwoBitAdder->setInputY2(true);
 
-    std::string answer = myTwoBitAdder->answer();
+    std::vector<bool> actual = myTwoBitAdder->answer();
 
+    std::vector<bool> expected = {true, true, false};
     // 3. Test
 
-    EXPECT_EQ(answer,"0 0110");
+    EXPECT_EQ(actual, expected);
 
 }
