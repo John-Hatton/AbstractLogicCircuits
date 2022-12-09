@@ -776,57 +776,247 @@ std::vector<bool> FourBitRAM::currentState() {
 
     // And Gates / D Latches
 
+    /////// Bit Zero
+
+    // Word Zero
+
     wordZeroBitZeroAnd->setInputX(rightRIAG->answer());
     wordZeroBitZeroAnd->setInputY(writeNotA->answer());
-
     wordZeroBitZeroAnd->answer();
 
     wordZeroBitZero->setEnable(wordZeroBitZeroAnd->answer());
     wordZeroBitZero->setData(data0);
-
     wordZeroBitZero->currentState();
 
+    // Word One
+
     wordOneBitZeroAnd->setInputX(rightRIAG->answer());
-
-    // Input Pin Y comes from Inverted Buffergate
     wordOneBitZeroAnd->setInputY(writeInvertedBufferA->answer());
-
     wordOneBitZeroAnd->answer();
 
     wordOneBitZero->setEnable(wordOneBitZeroAnd->answer());
     wordOneBitZero->setData(data0);
-
     wordOneBitZero->currentState();
 
+    // Word Two
 
     wordTwoBitZeroAnd->setInputX(leftRIAG->answer());
     wordTwoBitZeroAnd->setInputY(writeNotA->answer());
-
     wordTwoBitZeroAnd->answer();
 
     wordTwoBitZero->setEnable(wordTwoBitZeroAnd->answer());
     wordTwoBitZero->setData(data0);
-
     wordTwoBitZero->currentState();
 
+    // Word Three
 
     wordThreeBitZeroAnd->setInputX(leftRIAG->answer());
     wordThreeBitZeroAnd->setInputY(writeInvertedBufferA->answer());
+    wordThreeBitZeroAnd->answer();
 
-    wordThreeBitZero->setEnable(wordThreeBitOneAnd->answer());
+    wordThreeBitZero->setEnable(wordThreeBitZeroAnd->answer());
     wordThreeBitZero->setData(data0);
-
     wordThreeBitZero->currentState();
 
 
+    // Finish for Bits One, Two, and Three
+
+
+    ///////// Bit One
+
+    // Word Zero
+    wordZeroBitOneAnd->setInputX(rightRIAG->answer());
+    wordZeroBitOneAnd->setInputY(writeNotA->answer());
+    wordZeroBitOneAnd->answer();
+
+    wordZeroBitOne->setEnable(wordZeroBitOneAnd->answer());
+    wordZeroBitOne->setData(data1);
+    wordZeroBitOne->currentState();
+
+    // Word One
+
+    wordOneBitOneAnd->setInputX(rightRIAG->answer());
+    wordOneBitOneAnd->setInputY(writeInvertedBufferA->answer());
+    wordOneBitOneAnd->answer();
+
+    wordOneBitOne->setEnable(wordOneBitOneAnd->answer());
+    wordOneBitOne->setData(data1);
+    wordOneBitOne->currentState();
+
+    // Word Two
+
+    wordTwoBitOneAnd->setInputX(leftRIAG->answer());
+    wordTwoBitOneAnd->setInputY(writeNotA->answer());
+    wordTwoBitOneAnd->answer();
+
+    wordTwoBitOne->setEnable(wordTwoBitOneAnd->answer());
+    wordTwoBitOne->setData(data1);
+    wordTwoBitOne->currentState();
+
+
+    // Word Three
+
+    wordThreeBitOneAnd->setInputX(leftRIAG->answer());
+    wordThreeBitOneAnd->setInputY(writeInvertedBufferA->answer());
+    wordThreeBitOneAnd->answer();
+
+    wordThreeBitOne->setEnable(wordThreeBitOneAnd->answer());
+    wordThreeBitOne->setData(data1);
+    wordThreeBitOne->currentState();
+
+
+
+
+    ///////// Bit Two
+
+
+    // Word Zero
+
+    wordZeroBitTwoAnd->setInputX(rightRIAG->answer());
+    wordZeroBitTwoAnd->setInputY(writeNotA->answer());
+    wordZeroBitTwoAnd->answer();
+
+    wordZeroBitTwo->setEnable(wordZeroBitTwoAnd->answer());
+    wordZeroBitTwo->setData(data2);
+    wordZeroBitTwo->currentState();
+
+    // Word One
+
+    wordOneBitTwoAnd->setInputX(rightRIAG->answer());
+    wordOneBitTwoAnd->setInputY(writeInvertedBufferA->answer());
+    wordOneBitTwoAnd->answer();
+
+    wordOneBitTwo->setEnable(wordOneBitTwoAnd->answer());
+    wordOneBitTwo->setData(data2);
+    wordOneBitTwo->currentState();
+
+    // Word Two
+
+    wordTwoBitTwoAnd->setInputX(leftRIAG->answer());
+    wordTwoBitTwoAnd->setInputY(writeNotA->answer());
+    wordTwoBitTwoAnd->answer();
+
+    wordTwoBitTwo->setEnable(wordTwoBitTwoAnd->answer());
+    wordTwoBitTwo->setData(data2);
+    wordTwoBitTwo->currentState();
+
+
+    // Word Three
+
+    wordThreeBitTwoAnd->setInputX(leftRIAG->answer());
+    wordThreeBitTwoAnd->setInputY(writeInvertedBufferA->answer());
+    wordThreeBitTwoAnd->answer();
+
+    wordThreeBitTwo->setEnable(wordThreeBitTwoAnd->answer());
+    wordThreeBitTwo->setData(data2);
+    wordThreeBitTwo->currentState();
+
+
+    ///////// Bit Three
+
+
+    // Word Zero
+
+    wordZeroBitThreeAnd->setInputX(rightRIAG->answer());
+    wordZeroBitThreeAnd->setInputY(writeNotA->answer());
+    wordZeroBitThreeAnd->answer();
+
+    wordZeroBitThree->setEnable(wordZeroBitThreeAnd->answer());
+    wordZeroBitThree->setData(data3);
+    wordZeroBitThree->currentState();
+
+    // Word One
+
+    wordOneBitThreeAnd->setInputX(rightRIAG->answer());
+    wordOneBitThreeAnd->setInputY(writeInvertedBufferA->answer());
+    wordOneBitThreeAnd->answer();
+
+    wordOneBitThree->setEnable(wordOneBitThreeAnd->answer());
+    wordOneBitThree->setData(data3);
+    wordOneBitThree->currentState();
+
+    // Word Two
+
+    wordTwoBitThreeAnd->setInputX(leftRIAG->answer());
+    wordTwoBitThreeAnd->setInputY(writeNotA->answer());
+    wordTwoBitThreeAnd->answer();
+
+    wordTwoBitThree->setEnable(wordTwoBitThreeAnd->answer());
+    wordTwoBitThree->setData(data3);
+    wordTwoBitThree->currentState();
+
+
+    // Word Three
+
+    wordThreeBitThreeAnd->setInputX(leftRIAG->answer());
+    wordThreeBitThreeAnd->setInputY(writeInvertedBufferA->answer());
+    wordThreeBitThreeAnd->answer();
+
+    wordThreeBitThree->setEnable(wordThreeBitThreeAnd->answer());
+    wordThreeBitThree->setData(data3);
+    wordThreeBitThree->currentState();
+
+    ////////////////////////////// Step 3
+
     // Tri Input And Gates
+
+    readDecoderOutputOneAndOne->setInputX(wordZeroBitZero->currentState());
+    readDecoderOutputOneAndOne->setInputY(readNotB->answer());
+    readDecoderOutputOneAndOne->setInputZ(readNotA->answer());
+    readDecoderOutputOneAndOne->answer();
+
+
+    readDecoderOutputOneAndTwo->setInputX(wordOneBitZero->currentState());
+    readDecoderOutputOneAndTwo->setInputY(readNotB->answer());
+    readDecoderOutputOneAndTwo->setInputZ(readIBGateA->answer());
+    readDecoderOutputOneAndTwo->answer();
+
+    readDecoderOutputOneAndThree->setInputX(wordTwoBitZero->currentState());
+    readDecoderOutputOneAndThree->setInputY(readIBGateB->answer());
+    readDecoderOutputOneAndThree->setInputZ(readNotA->answer());
+    readDecoderOutputOneAndThree->answer();
+
+    readDecoderOutputOneAndFour->setInputX(wordThreeBitZero->currentState());
+    readDecoderOutputOneAndFour->setInputY(readIBGateB->answer());
+    readDecoderOutputOneAndFour->setInputZ(readIBGateA->answer());
+    readDecoderOutputOneAndFour->answer();
+
+    // Bit One is Done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // Quad Input Nor Gates
 
-
-
-
-
+    dataZeroQuadNor->setInputA(readDecoderOutputOneAndOne->answer());
+    dataZeroQuadNor->setInputB(readDecoderOutputOneAndTwo->answer());
+    dataZeroQuadNor->setInputC(readDecoderOutputOneAndThree->answer());
+    dataZeroQuadNor->setInputD(readDecoderOutputOneAndFour->answer());
+    dataZeroQuadNor->answer(); // Should have output bit one!!!
 
     return {};
 }
