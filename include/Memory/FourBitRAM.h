@@ -378,100 +378,243 @@ private:
 
 public:
 
+    /**
+     * Default Constructor: Initializes all object variables appropriately.
+     */
     FourBitRAM();
 
-    bool isData0() const;
-
+    /**
+     * The Get Data 0 function is a standard getter for the internal data0 boolean variable.
+     * @return Returns the value of data0.
+     */
+    bool getData0() const;
+    /**
+     *
+     * @param data0
+     */
     void setData0(bool data0);
-
-    bool isData1() const;
-
+    /**
+     * The Get Data 1 function is a standard getter for the internal data1 boolean variable.
+     * @return Returns the value of data1.
+     */
+    bool getData1() const;
+    /**
+     *
+     * @param data1
+     */
     void setData1(bool data1);
-
-    bool isData2() const;
-
+    /**
+     * The Get Data 2 function is a standard getter for the internal data2 boolean variable.
+     * @return Returns the value of data2.
+     */
+    bool getData2() const;
+    /**
+     *
+     * @param data2
+     */
     void setData2(bool data2);
-
-    bool isData3() const;
-
+    /**
+     * The Get Data 3 function is a standard getter for the internal data3 boolean variable.
+     * @return Returns the value of data3.
+     */
+    bool getData3() const;
+    /**
+     *
+     * @param data3
+     */
     void setData3(bool data3);
-
-    bool isOutput1() const;
-
+    /**
+     * The Get Output 1 function is a standard getter for the internal output1 boolean variable.
+     * @return Returns the value of output1.
+     */
+    bool getOutput1() const;
+    /**
+     *
+     * @param output1
+     */
     void setOutput1(bool output1);
-
-    bool isOutput2() const;
-
+    /**
+     * The Get Output 2 function is a standard getter for the internal output2 boolean variable.
+     * @return Returns the value of output2.
+     */
+    bool getOutput2() const;
+    /**
+     *
+     * @param output2
+     */
     void setOutput2(bool output2);
-
-    bool isOutput3() const;
-
+    /**
+     * The Get Output 3 function is a standard getter for the internal output3 boolean variable.
+     * @return Returns the value of output3.
+     */
+    bool getOutput3() const;
+    /**
+     *
+     * @param output3
+     */
     void setOutput3(bool output3);
-
-    bool isOutput4() const;
-
+    /**
+     * The Get Output 4 function is a standard getter for the internal output4 boolean variable.
+     * @return Returns the value of output4.
+     */
+    bool getOutput4() const;
+    /**
+     *
+     * @param output4
+     */
     void setOutput4(bool output4);
-
-    bool isWriteInputGw() const;
-
+    /**
+     * The Get Write Input GW (Write Enable) function is a standard getter for the internal writeInputGW boolean variable.
+     * @return Returns the value of writeInputGW.
+     */
+    bool getWriteInputGw() const;
+    /**
+     *
+     * @param writeInputGw
+     */
     void setWriteInputGw(bool writeInputGw);
-
-    bool isWriteInputWa() const;
-
+    /**
+     * The Get Write Input WA function is a standard getter for the internal writeInputWA boolean variable.
+     * @return Returns the value of writeInputWA.
+     */
+    bool getWriteInputWa() const;
+    /**
+     *
+     * @param writeInputWa
+     */
     void setWriteInputWa(bool writeInputWa);
-
-    bool isWriteInputWb() const;
-
+    /**
+     * The Get Write Input WB function is a standard getter for the internal writeInputWB boolean variable.
+     * @return Returns the value of writeInputWB.
+     */
+    bool getWriteInputWb() const;
+    /**
+     *
+     * @param writeInputWb
+     */
     void setWriteInputWb(bool writeInputWb);
-
-    bool isReadInputGr() const;
-
+    /**
+     * The Get Read Input GR (READ INVERT... Don't Use) function is a standard getter for the internal readInputGR
+     * boolean variable.
+     * @return Returns the value of readInputGR.
+     */
+    bool getReadInputGr() const;
+    /**
+     *
+     * @param readInputGr
+     */
     void setReadInputGr(bool readInputGr);
-
-    bool isReadInputRa() const;
-
+    /**
+     * The Get Read Input RA function is a standard getter for the internal readInputRA boolean variable.
+     * @return Returns the value of readInputRA.
+     */
+    bool getReadInputRa() const;
+    /**
+     *
+     * @param readInputRa
+     */
     void setReadInputRa(bool readInputRa);
-
-    bool isReadInputRb() const;
-
+    /**
+     * The Get Read Input RB function is a standard getter for the internal readInputRB boolean variable.
+     * @return Returns the value of readInputRB.
+     */
+    bool getReadInputRb() const;
+    /**
+     *
+     * @param readInputRb
+     */
     void setReadInputRb(bool readInputRb);
-
+    /**
+     *
+     * @return
+     */
     InvertedBufferGate *getReadIbGateRead() const;
-
+    /**
+     *
+     * @param readIbGateRead
+     */
     void setReadIbGateRead(InvertedBufferGate *readIbGateRead);
-
+    /**
+     *
+     * @return
+     */
     NotGate *getReadNotA() const;
-
+    /**
+     *
+     * @param readNotA
+     */
     void setReadNotA(NotGate *readNotA);
-
+    /**
+     *
+     * @return
+     */
     NotGate *getReadNotB() const;
-
+    /**
+     *
+     * @param readNotB
+     */
     void setReadNotB(NotGate *readNotB);
-
+    /**
+     *
+     * @return
+     */
     InvertedBufferGate *getReadIbGateA() const;
-
+    /**
+     *
+     * @param readIbGateA
+     */
     void setReadIbGateA(InvertedBufferGate *readIbGateA);
-
+    /**
+     *
+     * @return
+     */
     InvertedBufferGate *getReadIbGateB() const;
-
+    /**
+     *
+     * @param readIbGateB
+     */
     void setReadIbGateB(InvertedBufferGate *readIbGateB);
-
+    /**
+     *
+     * @return
+     */
     RightInvertedAndGate *getLeftRiag() const;
-
+    /**
+     *
+     * @param leftRiag
+     */
     void setLeftRiag(RightInvertedAndGate *leftRiag);
-
+    /**
+     *
+     * @return
+     */
     RightInvertedAndGate *getRightRiag() const;
-
+    /**
+     *
+     * @param rightRiag
+     */
     void setRightRiag(RightInvertedAndGate *rightRiag);
-
+    /**
+     *
+     * @return
+     */
     NotGate *getWriteNotA() const;
-
+    /**
+     *
+     * @param writeNotA
+     */
     void setWriteNotA(NotGate *writeNotA);
-
+    /**
+     *
+     * @return
+     */
     InvertedBufferGate *getWriteInvertedBufferA() const;
-
+    /**
+     *
+     * @param writeInvertedBufferA
+     */
     void setWriteInvertedBufferA(InvertedBufferGate *writeInvertedBufferA);
-
+    
     D_FlipFlop *getWordZeroBitZero() const;
 
     void setWordZeroBitZero(D_FlipFlop *wordZeroBitZero);
