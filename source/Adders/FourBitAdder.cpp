@@ -169,8 +169,6 @@ std::vector<bool> FourBitAdder::answer() {
     sumFourOut = bitFourFullAdder->getSum();
     carryOut = bitFourFullAdder->getCarryOut();
 
-
-
     return {carryOut,sumFourOut,sumThreeOut,sumTwoOut,sumOneOut};
 }
 
