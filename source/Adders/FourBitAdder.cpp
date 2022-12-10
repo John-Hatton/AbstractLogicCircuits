@@ -150,7 +150,7 @@ std::vector<bool> FourBitAdder::answer() {
 
     bitOneFullAdder->setInputX(inputX1);
     bitOneFullAdder->setInputY(inputY1);
-    bitOneFullAdder->answer();
+    bitOneFullAdder->answer(); // Must call answer(), to populate sum variable
     sumOneOut = bitOneFullAdder->getSum();
     bitTwoFullAdder->setCarryIn(bitOneFullAdder->getCarryOut());
     bitTwoFullAdder->setInputX(inputX2);
