@@ -1138,7 +1138,7 @@ std::vector<bool> FourBitRAM::currentState() {
     outputNandFour->setInputY(readIBGateRead->answer());
     output4 = outputNandFour->answer(); // Set final state of Output
 
-    return {output1, output2, output3, output4};
+    return {output4, output3, output2, output1};
 }
 
 
