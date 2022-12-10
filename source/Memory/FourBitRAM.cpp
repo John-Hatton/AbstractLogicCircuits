@@ -105,7 +105,7 @@ FourBitRAM::FourBitRAM() { // Constructor Prologue
 
 } // Constructor Epilogue
 
-bool FourBitRAM::isData0() const {
+bool FourBitRAM::getData0() const {
     return data0;
 }
 
@@ -113,7 +113,7 @@ void FourBitRAM::setData0(bool data0) {
     FourBitRAM::data0 = data0;
 }
 
-bool FourBitRAM::isData1() const {
+bool FourBitRAM::getData1() const {
     return data1;
 }
 
@@ -121,7 +121,7 @@ void FourBitRAM::setData1(bool data1) {
     FourBitRAM::data1 = data1;
 }
 
-bool FourBitRAM::isData2() const {
+bool FourBitRAM::getData2() const {
     return data2;
 }
 
@@ -129,7 +129,7 @@ void FourBitRAM::setData2(bool data2) {
     FourBitRAM::data2 = data2;
 }
 
-bool FourBitRAM::isData3() const {
+bool FourBitRAM::getData3() const {
     return data3;
 }
 
@@ -137,7 +137,7 @@ void FourBitRAM::setData3(bool data3) {
     FourBitRAM::data3 = data3;
 }
 
-bool FourBitRAM::isOutput1() const {
+bool FourBitRAM::getOutput1() const {
     return output1;
 }
 
@@ -145,7 +145,7 @@ void FourBitRAM::setOutput1(bool output1) {
     FourBitRAM::output1 = output1;
 }
 
-bool FourBitRAM::isOutput2() const {
+bool FourBitRAM::getOutput2() const {
     return output2;
 }
 
@@ -153,7 +153,7 @@ void FourBitRAM::setOutput2(bool output2) {
     FourBitRAM::output2 = output2;
 }
 
-bool FourBitRAM::isOutput3() const {
+bool FourBitRAM::getOutput3() const {
     return output3;
 }
 
@@ -161,7 +161,7 @@ void FourBitRAM::setOutput3(bool output3) {
     FourBitRAM::output3 = output3;
 }
 
-bool FourBitRAM::isOutput4() const {
+bool FourBitRAM::getOutput4() const {
     return output4;
 }
 
@@ -169,7 +169,7 @@ void FourBitRAM::setOutput4(bool output4) {
     FourBitRAM::output4 = output4;
 }
 
-bool FourBitRAM::isWriteInputGw() const {
+bool FourBitRAM::getWriteInputGw() const {
     return writeInputGW;
 }
 
@@ -177,7 +177,7 @@ void FourBitRAM::setWriteInputGw(bool writeInputGw) {
     writeInputGW = writeInputGw;
 }
 
-bool FourBitRAM::isWriteInputWa() const {
+bool FourBitRAM::getWriteInputWa() const {
     return writeInputWA;
 }
 
@@ -185,7 +185,7 @@ void FourBitRAM::setWriteInputWa(bool writeInputWa) {
     writeInputWA = writeInputWa;
 }
 
-bool FourBitRAM::isWriteInputWb() const {
+bool FourBitRAM::getWriteInputWb() const {
     return writeInputWB;
 }
 
@@ -193,7 +193,7 @@ void FourBitRAM::setWriteInputWb(bool writeInputWb) {
     writeInputWB = writeInputWb;
 }
 
-bool FourBitRAM::isReadInputGr() const {
+bool FourBitRAM::getReadInputGr() const {
     return readInputGR; // Might have to stay inverted, depending on diagram
 }
 
@@ -201,7 +201,7 @@ void FourBitRAM::setReadInputGr(bool readInputGr) {
     readInputGR = readInputGr;
 }
 
-bool FourBitRAM::isReadInputRa() const {
+bool FourBitRAM::getReadInputRa() const {
     return readInputRA;
 }
 
@@ -209,7 +209,7 @@ void FourBitRAM::setReadInputRa(bool readInputRa) {
     readInputRA = readInputRa;
 }
 
-bool FourBitRAM::isReadInputRb() const {
+bool FourBitRAM::getReadInputRb() const {
     return readInputRB;
 }
 
