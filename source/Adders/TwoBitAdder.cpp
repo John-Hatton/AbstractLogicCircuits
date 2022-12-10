@@ -5,7 +5,10 @@
 #include <vector>
 #include "Adders/TwoBitAdder.h"
 
-TwoBitAdder::TwoBitAdder() = default;
+TwoBitAdder::TwoBitAdder() {
+        bitOneFullAdder = new FullAdder();
+        bitTwoFullAdder = new FullAdder();
+}
 
 bool TwoBitAdder::getInputX1() const {
     return inputX1;
@@ -57,9 +60,9 @@ void TwoBitAdder::setBitTwoFullAdder(FullAdder* fA2) {
 
 std::vector<bool> TwoBitAdder::answer() {
 
-
-    auto fullAdderOne = new FullAdder();
-    auto fullAdderTwo = new FullAdder();
+    // TODO:
+    auto fullAdderOne = bitOneFullAdder;
+    auto fullAdderTwo = bitTwoFullAdder;
 
     fullAdderOne->setInputX(inputX1);
     fullAdderOne->setInputY(inputY1);

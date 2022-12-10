@@ -3,6 +3,7 @@
 //
 #pragma once
 
+#include <vector>
 #include "LogicGates/XorGate.h"
 #include "LogicGates/AndGate.h"
 
@@ -112,6 +113,6 @@ public:
      * @return Returns a string representing the output of the inputs given.
      * For example with the inputs 0 and 1, the generated result would be "0001".
      */
-    std::string answer();
+    std::vector<bool> answer();
 };
 
