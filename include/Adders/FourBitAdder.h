@@ -7,7 +7,7 @@
 #include "FullAdder.h"
 
 /**
- * The Four Bit Adder class represents two Full Adders, chained to get to add two two-bit binary numbers.
+ * The Four Bit Adder class represents four Full Adders, chained to get to add two four-bit binary numbers.
  */
 class FourBitAdder {
 
@@ -54,36 +54,44 @@ private:
 
 
     /**
-     * Represents the First of Two Full Adders, used to make a Four Bit adder.
+     * Represents the First of Four Full Adders, used to make a Four Bit adder.
      */
     FullAdder* bitOneFullAdder;
 
     /**
-     * Represents the Second of Two Full Adders, used to make a Four Bit adder.
+     * Represents the Second of Four Full Adders, used to make a Four Bit adder.
      */
     FullAdder* bitTwoFullAdder;
 
     /**
-     * Represents the Third of Two Full Adders, used to make a Four Bit adder.
+     * Represents the Third of Four Full Adders, used to make a Four Bit adder.
      */
     FullAdder* bitThreeFullAdder;
 
     /**
-     * Represents the Second of Two Full Adders, used to make a Four Bit adder.
+     * Represents the Fourth of Four Full Adders, used to make a Four Bit adder.
      */
     FullAdder* bitFourFullAdder;
 
-
+    /**
+     * Represents Sum One Output
+     */
     bool sumOneOut;
-
+    /**
+     * Represents Sum Two Output
+     */
     bool sumTwoOut;
-
+    /**
+     * Represents Sum Three Output
+     */
     bool sumThreeOut;
-
+    /**
+     * Represents Sum Four Output
+     */
     bool sumFourOut;
 
     /**
-     * Represents the boolean value carried out of the Four Bit Adder (the third bit).
+     * Represents the boolean value carried out of the Four Bit Adder (the fifth bit).
      */
     bool carryOut;
 public:
@@ -143,22 +151,46 @@ public:
      * @param inY2 Corresponds with the boolean value that's going into inputY2.
      */
     void setInputY2(bool inY2);
-
+    /**
+     * The Get Input X3 function is a getter for the internal inputX3 boolean.
+     * @return Returns the encapsulated value of inputX3.
+     */
     bool getInputX3() const;
-
-    void setInputX3(bool inputX3);
-
+    /**
+     * The Set Input X3 function is a setter for the internal inputX3 boolean.
+     * @param inX3 Corresponds with the boolean value that's going into inputX3.
+     */
+    void setInputX3(bool inX3);
+    /**
+     * The Get Input Y3 function is a getter for the internal inputY3 boolean.
+     * @return Returns the encapsulated value of inputY3.
+     */
     bool getInputY3() const;
-
-    void setInputY3(bool inputY3);
-
+    /**
+     * The Set Input Y3 function is a setter for the internal inputY3 boolean.
+     * @param inY3 Corresponds with the boolean value that's going into inputY3.
+     */
+    void setInputY3(bool inY3);
+    /**
+     * The Get Input X4 function is a getter for the internal inputX4 boolean.
+     * @return Returns the encapsulated value of inputX4.
+     */
     bool getInputX4() const;
-
-    void setInputX4(bool inputX4);
-
+    /**
+     * The Set Input X4 function is a setter for the internal inputX4 boolean.
+     * @param inX4 Corresponds with the boolean value that's going into inputX4.
+     */
+    void setInputX4(bool inX4);
+    /**
+     * The Get Input Y4 function is a getter for the internal inputY4 boolean.
+     * @return Returns the encapsulated value of inputY4.
+     */
     bool getInputY4() const;
-
-    void setInputY4(bool inputY4);
+    /**
+     * The Set Input Y4 function is a setter for the internal inputY4 boolean.
+     * @param inY4 Corresponds with the boolean value that's going into inputY4.
+     */
+    void setInputY4(bool inY4);
 
     /**
      * The Get Bit One Full Adder is a getter for the internal Full Adder pointer variable
@@ -183,38 +215,84 @@ public:
 
     /**
      * The Set Bit Two Full Adder is a setter for the internal Full Adder pointer variable
-     * called bitTwoFullAdder. This represents the first bit of the Four Bits being added.
+     * called bitTwoFullAdder. This represents the second bit of the Four Bits being added.
      * @param fA2 Corresponds with the incoming full adder for bit two.
      */
     void setBitTwoFullAdder(FullAdder* fA2);
-
+    /**
+     * The Get Bit Three Full Adder is a getter for the internal Full Adder pointer variable
+     * called bitThreeFullAdder. This represents the third bit of the Four Bits being added.
+     * @return Returns a pointer to the internal third FullAdder of this class.
+     */
     FullAdder *getBitThreeFullAdder() const;
-
-    void setBitThreeFullAdder(FullAdder *bitThreeFullAdder);
-
+    /**
+     * The Set Bit Three Full Adder is a setter for the internal Full Adder pointer variable
+     * called bitTwoFullAdder. This represents the third bit of the Four Bits being added.
+     * @param fA3 Corresponds with the incoming full adder for bit three.
+     */
+    void setBitThreeFullAdder(FullAdder* fA3);
+    /**
+     * The Get Bit Four Full Adder is a getter for the internal Full Adder pointer variable
+     * called bitTwoFullAdder. This represents the fourth bit of the Four Bits being added.
+     * @return Returns a pointer to the internal fourth FullAdder of this class.
+     */
     FullAdder *getBitFourFullAdder() const;
-
-    void setBitFourFullAdder(FullAdder *bitFourFullAdder);
-
+    /**
+     * The Set Bit Four Full Adder is a setter for the internal Full Adder pointer variable
+     * called bitFourFullAdder. This represents the fourth bit of the Four Bits being added.
+     * @param fA4 Corresponds with the incoming full adder for bit four.
+     */
+    void setBitFourFullAdder(FullAdder* fA4);
+    /**
+     * The Get Sum One Out function is a getter for the internal SumOneOut boolean.
+     * @return Returns the encapsulated value of sumOneOut.
+     */
     bool getSumOneOut() const;
-
-    void setSumOneOut(bool sumOneOut);
-
+    /**
+     * The Set sumOneOut function is a setter for the internal sumOneOut boolean.
+     * @param sum1Out Corresponds with the boolean value that's going into sumOneOut.
+     */
+    void setSumOneOut(bool sum1Out);
+    /**
+     * The Get Sum Two Out function is a getter for the internal SumTwoOut boolean.
+     * @return Returns the encapsulated value of sumTwoOut.
+     */
     bool getSumTwoOut() const;
-
-    void setSumTwoOut(bool sumTwoOut);
-
+    /**
+     * The Set sumTwoOut function is a setter for the internal sumTwoOut boolean.
+     * @param sum2Out Corresponds with the boolean value that's going into sumTwoOut.
+     */
+    void setSumTwoOut(bool sum2Out);
+    /**
+     * The Get Sum Three Out function is a getter for the internal SumThreeOut boolean.
+     * @return Returns the encapsulated value of sumThreeOut.
+     */
     bool getSumThreeOut() const;
-
-    void setSumThreeOut(bool sumThreeOut);
-
+    /**
+     * The Set sumThreeOut function is a setter for the internal sumThreeOut boolean.
+     * @param sum3Out Corresponds with the boolean value that's going into sumThreeOut.
+     */
+    void setSumThreeOut(bool sum3Out);
+    /**
+     * The Get Sum Four Out function is a getter for the internal SumFourOut boolean.
+     * @return Returns the encapsulated value of sumFourOut.
+     */
     bool getSumFourOut() const;
-
-    void setSumFourOut(bool sumFourOut);
-
+    /**
+    * The Set sumFourOut function is a setter for the internal sumFourOut boolean.
+    * @param sum4Out Corresponds with the boolean value that's going into sumFourOut.
+    */
+    void setSumFourOut(bool sum4Out);
+    /**
+     * The Get Carry Out function is a getter for the internal carryOut boolean.
+     * @return Returns the encapsulated value of carryOut.
+     */
     bool getCarryOut() const;
-
-    void setCarryOut(bool carryOut);
+    /**
+   * The Set carryOut function is a setter for the internal carryOut boolean.
+   * @param myCarryOut Corresponds with the boolean value that's going into carryOut.
+   */
+    void setCarryOut(bool myCarryOut);
 
     /**
      * The answer function is to be interpreted as the result of the inputs given.
