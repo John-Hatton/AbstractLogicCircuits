@@ -1,5 +1,5 @@
 //
-// Created by squid on 12/8/2022.
+// Created by squid on 12/08/2022.
 //
 #pragma once
 
@@ -12,191 +12,369 @@
 #include "LogicGates/RightInvertedAndGate.h"
 #include "LogicGates/InvertedBufferGate.h"
 
-class FourBitRAM {
 
+/**
+ * Four Bit RAM - This class represents the image titled FourBitRAM. This image is from the Datasheet of a
+ * Texas Instruments Chip, the SN74LS170 (and variants). It's described there as 4-by-4 Register Files with
+ * Open-Collector Outputs. (This refers to the transistors used, and for our abstraction can be ignored)
+ *
+ * The class has nine inputs and four outputs. The nine inputs correspond with four data inputs, data0, data1,
+ * data2, and data3. Then we have three write inputs, two for the two bit address, and one for the write enable.
+ * We can represent the four 4-bit words (addresses) as 00, 01, 10, and 11.
+ *
+ *
+ * *** Please note, inputs are data0, data1, data2, data3 and outputs are output1, output2, ouput3, and output4 ***
+ */
+
+class FourBitRAM {
 
 private:
 
 
+    /**
+     * Data Zero Input
+     */
     bool data0;
-
+    /**
+     * Data One Input
+     */
     bool data1;
-
+    /**
+     * Data Two Input
+     */
     bool data2;
-
+    /**
+     * Data Three Input
+     */
     bool data3;
 
 
+    /**
+     * Output Bit One (LSB)
+     */
     bool output1;
-
+    /**
+     * Output Bit Two
+     */
     bool output2;
-
+    /**
+     * Output Bit Three
+     */
     bool output3;
-
+    /**
+     * Output Bit Four (MSB)
+     */
     bool output4;
 
 
-    bool writeInputGW;      // Write Enable (BOTH)
-
-    bool writeInputWA;      // Write A
-
-    bool writeInputWB;      // Write B
-
-    bool readInputGR;       // Read Enable (BOTH)
-
+    /**
+     * Write Enable Switch
+     */
+    bool writeInputGW;
+    /**
+     * Write Input Address-Bit for Address Bit 1 (2^0), or Write A
+     */
+    bool writeInputWA;
+    /**
+     * Write Input Address-Bit for Address Bit 2 2^1, or Write B
+     */
+    bool writeInputWB;
+    /**
+     * In the original documentation, but found no use. Will probably remove later.
+     * Has the effect of inverting the output of bits at whatever address, might
+     * come in handy somewhere
+     */
+    bool readInputGR;
+    /**
+     * Read Input Address-Bit for Address Bit 1 (2^0), or Read A
+     */
     bool readInputRA;       // Read A
-
+    /**
+     * Read Input Address-Bit for Address Bit 2 (2^1), or Read B
+     */
     bool readInputRB;       // Read B
-
-
-
+    /**
+     * See datasheet. Logic Gate is at the bottom left of the image, with
+     * only one of the two inputs inverted, hence Right Inverted And Gate.
+     * Left Gate.
+     */
     RightInvertedAndGate* leftRIAG;
-
+    /**
+     * See datasheet. Logic Gate is at the bottom left of the image, with
+     * only one of the two inputs inverted, hence Right Inverted And Gate.
+     * Right Gate.
+     */
     RightInvertedAndGate* rightRIAG;
-
+    /**
+     * See datasheet. Logic Gate directly after writeInputWA.
+     */
     NotGate* writeNotA;
-
+    /**
+     * See datasheet. Logic Gate directly after writeNotA.
+     */
     InvertedBufferGate* writeInvertedBufferA;
-
+    /**
+     * See datasheet. Inverted Buffer Gate on bottom right side of image. Comes
+     * right after readInputGR. Necessary for proper output. If set to true,
+     * output will be inverted, so use carefully...
+     */
     InvertedBufferGate* readIBGateRead;
-
+    /**
+     * See datasheet. Inverter right after readInputRA.
+     */
     NotGate* readNotA;
-
+    /**
+     * See datasheet. Inverter right after readInputRB.
+     */
     NotGate* readNotB;
-
+    /**
+     * See datasheet. InvertedBufferGate right after readNotA.
+     */
     InvertedBufferGate* readIBGateA;
-
+    /**
+     * See datasheet. InvertedBufferGate right after readNotB.
+     */
     InvertedBufferGate* readIBGateB;
 
 
+    /**
+     * Word Zero Bit Zero is one of the D Flip-Flops, which make up the four-by-four RAM.
+     */
     D_FlipFlop* wordZeroBitZero;
-
+    /**
+     * Word Zero Bit One is one of the D Flip-Flops, which make up the four-by-four RAM.
+     */
     D_FlipFlop* wordZeroBitOne;
-
+    /**
+     * Word Zero Bit Two is one of the D Flip-Flops, which make up the four-by-four RAM.
+     */
     D_FlipFlop* wordZeroBitTwo;
-
+    /**
+     * Word Zero Bit Three is one of the D Flip-Flops, which make up the four-by-four RAM.
+     */
     D_FlipFlop* wordZeroBitThree;
-
+    /**
+     * Word One Bit Zero is one of the D Flip-Flops, which make up the four-by-four RAM.
+     */
     D_FlipFlop* wordOneBitZero;
-
+    /**
+     * Word One Bit One is one of the D Flip-Flops, which make up the four-by-four RAM.
+     */
     D_FlipFlop* wordOneBitOne;
-
+    /**
+     * Word One Bit Two is one of the D Flip-Flops, which make up the four-by-four RAM.
+     */
     D_FlipFlop* wordOneBitTwo;
-
+    /**
+     * Word One Bit Three is one of the D Flip-Flops, which make up the four-by-four RAM.
+     */
     D_FlipFlop* wordOneBitThree;
-
+    /**
+     * Word Two Bit Zero is one of the D Flip-Flops, which make up the four-by-four RAM.
+     */
     D_FlipFlop* wordTwoBitZero;
-
+    /**
+     * Word Two Bit One is one of the D Flip-Flops, which make up the four-by-four RAM.
+     */
     D_FlipFlop* wordTwoBitOne;
-
+    /**
+     * Word Two Bit Two is one of the D Flip-Flops, which make up the four-by-four RAM.
+     */
     D_FlipFlop* wordTwoBitTwo;
-
+    /**
+     * Word Two Bit Three is one of the D Flip-Flops, which make up the four-by-four RAM.
+     */
     D_FlipFlop* wordTwoBitThree;
-
+    /**
+     * Word Three Bit Zero is one of the D Flip-Flops, which make up the four-by-four RAM.
+     */
     D_FlipFlop* wordThreeBitZero;
-
+    /**
+     * Word Three Bit One is one of the D Flip-Flops, which make up the four-by-four RAM.
+     */
     D_FlipFlop* wordThreeBitOne;
-
+    /**
+     * Word Three Bit Two is one of the D Flip-Flops, which make up the four-by-four RAM.
+     */
     D_FlipFlop* wordThreeBitTwo;
-
+    /**
+     * Word Three Bit Three is one of the D Flip-Flops, which make up the four-by-four RAM.
+     */
     D_FlipFlop* wordThreeBitThree;
 
-    // AND GATES BEFORE D LATCHES
 
+    /**
+     * Word Zero Bit Zero AND Gate - Each D Flip_Flop has an AND Gate which goes into its enable pin.
+     */
     AndGate* wordZeroBitZeroAnd;
-
+    /**
+     * Word Zero Bit One AND Gate - Each D Flip_Flop has an AND Gate which goes into its enable pin.
+     */
     AndGate* wordZeroBitOneAnd;
-
+    /**
+     * Word Zero Bit Two AND Gate - Each D Flip_Flop has an AND Gate which goes into its enable pin.
+     */
     AndGate* wordZeroBitTwoAnd;
-
+    /**
+     * Word Zero Bit Three AND Gate - Each D Flip_Flop has an AND Gate which goes into its enable pin.
+     */
     AndGate* wordZeroBitThreeAnd;
-
+    /**
+     * Word One Bit Zero AND Gate - Each D Flip_Flop has an AND Gate which goes into its enable pin.
+     */
     AndGate* wordOneBitZeroAnd;
-
+    /**
+     * Word One Bit One AND Gate - Each D Flip_Flop has an AND Gate which goes into its enable pin.
+     */
     AndGate* wordOneBitOneAnd;
-
+    /**
+     * Word One Bit Two AND Gate - Each D Flip_Flop has an AND Gate which goes into its enable pin.
+     */
     AndGate* wordOneBitTwoAnd;
-
+    /**
+     * Word One Bit Three AND Gate - Each D Flip_Flop has an AND Gate which goes into its enable pin.
+     */
     AndGate* wordOneBitThreeAnd;
-
+    /**
+     * Word Two Bit Zero AND Gate - Each D Flip_Flop has an AND Gate which goes into its enable pin.
+     */
     AndGate* wordTwoBitZeroAnd;
-
+    /**
+     * Word Two Bit One AND Gate - Each D Flip_Flop has an AND Gate which goes into its enable pin.
+     */
     AndGate* wordTwoBitOneAnd;
-
+    /**
+     * Word Two Bit Two AND Gate - Each D Flip_Flop has an AND Gate which goes into its enable pin.
+     */
     AndGate* wordTwoBitTwoAnd;
-
+    /**
+     * Word Two Bit Three AND Gate - Each D Flip_Flop has an AND Gate which goes into its enable pin.
+     */
     AndGate* wordTwoBitThreeAnd;
-
+    /**
+     * Word Three Bit Zero AND Gate - Each D Flip_Flop has an AND Gate which goes into its enable pin.
+     */
     AndGate* wordThreeBitZeroAnd;
-
+    /**
+     * Word Three Bit One AND Gate - Each D Flip_Flop has an AND Gate which goes into its enable pin.
+     */
     AndGate* wordThreeBitOneAnd;
-
+    /**
+     * Word Three Bit Two AND Gate - Each D Flip_Flop has an AND Gate which goes into its enable pin.
+     */
     AndGate* wordThreeBitTwoAnd;
-
+    /**
+     * Word Three Bit Three AND Gate - Each D Flip_Flop has an AND Gate which goes into its enable pin.
+     */
     AndGate* wordThreeBitThreeAnd;
 
-    // TRI INPUT AND GATES
 
+    /**
+     * Read Decoder Output One AND Gate #1 - See datasheet, three input AND Gates.
+     */
     TriInputAndGate* readDecoderOutputOneAndOne;
-
+    /**
+     * Read Decoder Output One AND Gate #2 - See datasheet, three input AND Gates.
+     */
     TriInputAndGate* readDecoderOutputOneAndTwo;
-
+    /**
+     * Read Decoder Output One AND Gate #3 - See datasheet, three input AND Gates.
+     */
     TriInputAndGate* readDecoderOutputOneAndThree;
-
+    /**
+     * Read Decoder Output One AND Gate #3 - See datasheet, three input AND Gates.
+     */
     TriInputAndGate* readDecoderOutputOneAndFour;
-
+    /**
+     * Read Decoder Output Two AND Gate #1 - See datasheet, three input AND Gates.
+     */
     TriInputAndGate* readDecoderOutputTwoAndOne;
-
+    /**
+     * Read Decoder Output Two AND Gate #2 - See datasheet, three input AND Gates.
+     */
     TriInputAndGate* readDecoderOutputTwoAndTwo;
-
+    /**
+     * Read Decoder Output Two AND Gate #3 - See datasheet, three input AND Gates.
+     */
     TriInputAndGate* readDecoderOutputTwoAndThree;
-
+    /**
+     * Read Decoder Output Two AND Gate #4 - See datasheet, three input AND Gates.
+     */
     TriInputAndGate* readDecoderOutputTwoAndFour;
-
+    /**
+     * Read Decoder Output Three AND Gate #1 - See datasheet, three input AND Gates.
+     */
     TriInputAndGate* readDecoderOutputThreeAndOne;
-
+    /**
+     * Read Decoder Output Three AND Gate #2 - See datasheet, three input AND Gates.
+     */
     TriInputAndGate* readDecoderOutputThreeAndTwo;
-
+    /**
+     * Read Decoder Output Three AND Gate #3 - See datasheet, three input AND Gates.
+     */
     TriInputAndGate* readDecoderOutputThreeAndThree;
-
+    /**
+     * Read Decoder Output Three AND Gate #4 - See datasheet, three input AND Gates.
+     */
     TriInputAndGate* readDecoderOutputThreeAndFour;
-
+    /**
+     * Read Decoder Output Four AND Gate #1 - See datasheet, three input AND Gates.
+     */
     TriInputAndGate* readDecoderOutputFourAndOne;
-
+    /**
+     * Read Decoder Output Four AND Gate #2 - See datasheet, three input AND Gates.
+     */
     TriInputAndGate* readDecoderOutputFourAndTwo;
-
+    /**
+     * Read Decoder Output Four AND Gate #3 - See datasheet, three input AND Gates.
+     */
     TriInputAndGate* readDecoderOutputFourAndThree;
-
+    /**
+     * Read Decoder Output Four AND Gate #4 - See datasheet, three input AND Gates.
+     */
     TriInputAndGate* readDecoderOutputFourAndFour;
 
 
-    // QUAD INPUT NOR GATES
-
-
+    /**
+     * Data Zero Quad NOR Gate - Each NOR Gate is populated by the four Tri-Input AND Gates from the datasheet.
+     */
     QuadInputNorGate* dataZeroQuadNor;
-
+    /**
+     * Data One Quad NOR Gate - Each NOR Gate is populated by the four Tri-Input AND Gates from the datasheet.
+     */
     QuadInputNorGate* dataOneQuadNor;
-
+    /**
+     * Data Two Quad NOR Gate - Each NOR Gate is populated by the four Tri-Input AND Gates from the datasheet.
+     */
     QuadInputNorGate* dataTwoQuadNor;
-
+    /**
+     * Data Three Quad NOR Gate - Each NOR Gate is populated by the four Tri-Input AND Gates from the datasheet.
+     */
     QuadInputNorGate* dataThreeQuadNor;
 
 
     // NAND GATES
 
-
+    /**
+     * Output NAND Gate #1 - Populated by each QuadInputNOR Gate and the READ-Enable / Flip Switch.
+     * See datasheet.
+     */
     NandGate* outputNandOne;
-
+    /**
+     * Output NAND Gate #2 - Populated by each QuadInputNOR Gate and the READ-Enable / Flip Switch.
+     * See datasheet.
+     */
     NandGate* outputNandTwo;
-
+    /**
+     * Output NAND Gate #3 - Populated by each QuadInputNOR Gate and the READ-Enable / Flip Switch.
+     * See datasheet.
+     */
     NandGate* outputNandThree;
-
+    /**
+     * Output NAND Gate #4 - Populated by each QuadInputNOR Gate and the READ-Enable / Flip Switch.
+     * See datasheet.
+     */
     NandGate* outputNandFour;
-
-
-
-
-
 
 public:
 
