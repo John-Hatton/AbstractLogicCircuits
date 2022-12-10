@@ -79,7 +79,7 @@ FullAdder *FourBitAdder::getBitOneFullAdder() const {
 }
 
 void FourBitAdder::setBitOneFullAdder(FullAdder* fA1) {
-
+    bitOneFullAdder = fA1;
 }
 
 FullAdder *FourBitAdder::getBitTwoFullAdder() const {
