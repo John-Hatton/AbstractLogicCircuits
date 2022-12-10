@@ -2,6 +2,7 @@
 // Created by snake on 11/20/2022.
 //
 
+#include <vector>
 #include "Adders/TwoBitAdder.h"
 
 TwoBitAdder::TwoBitAdder() = default;
@@ -54,7 +55,7 @@ void TwoBitAdder::setBitTwoFullAdder(FullAdder* fA2) {
     bitTwoFullAdder = fA2;
 }
 
-std::string TwoBitAdder::answer() {
+std::vector<bool> TwoBitAdder::answer() {
 
 
     auto fullAdderOne = new FullAdder();
@@ -63,6 +64,7 @@ std::string TwoBitAdder::answer() {
     fullAdderOne->setInputX(inputX1);
     fullAdderOne->setInputY(inputY1);
     fullAdderOne->answer();
+
 
     // Set the carry out of the first adder to the carry in of the second.
     fullAdderTwo->setCarryIn(fullAdderOne->getCarryOut());
@@ -79,6 +81,10 @@ std::string TwoBitAdder::answer() {
     bool adderOneCarryOut = fullAdderOne->getCarryOut();
     bool adderTwoCarryOut = fullAdderTwo->getCarryOut();
 
+    sumOneOut = adderOneSum;
+    sumTwoOut = adderTwoSum;
+    carryOut = adderTwoCarryOut;
+
     // TODO: The idea is, I want to replace those bottom inputs with these, so I'm actually using my logic gates.
 
 
@@ -86,45 +92,53 @@ std::string TwoBitAdder::answer() {
     if (!adderOneSum && !adderTwoSum && !adderOneCarryOut && !adderTwoCarryOut)
     {
         // Result is 0
-        return "0 0000";
+        //return "0 0000";
+        return {false,false,false};
     }
 
     // Cases 2-5 == 0001
     else if(adderOneSum && !adderTwoSum && !adderOneCarryOut && !adderTwoCarryOut)
     {
         // Result is 1
-        return "0 0001";
+        //return "0 0001";
+        return {false, false, true};
     }
     else if(!adderOneSum && adderTwoSum && !adderOneCarryOut && !adderTwoCarryOut)
     {
         // Result is 1
-        return "0 0010";
+        //return "0 0010";
+        return {false,true, false};
     }
     else if(!adderOneSum && adderTwoSum && adderOneCarryOut && !adderTwoCarryOut)
     {
         // Result is 1
-        return "0 0010";
+        //return "0 0010";
+        return {false, true, false};
     }
     else if(!adderOneSum && !adderTwoSum && !adderOneCarryOut && adderTwoCarryOut)
     {
         // Result is 1
-        return "0 0100";
+        //return "0 0100";
+        return {true, false, false};
     }
     else if(!adderOneSum && !adderTwoSum && adderOneCarryOut && adderTwoCarryOut)
     {
         // Result is 1
-        return "0 0101";
+        //return "0 0101";
+        return {true, false, true};
     }
     else if(adderOneSum && !adderTwoSum && !adderOneCarryOut && adderTwoCarryOut)
     {
         // Result is 1
-        return "0 0101";
+        //return "0 0101";
+        return {true, false, true};
     }
     else if(!adderOneSum && adderTwoSum && adderOneCarryOut && adderTwoCarryOut)
     {
         // Result is 1
-        return "0 0110";
+        //return "0 0110";
+        return {true, true, false};
     }
 
-    return "-1"; // TODO: Finish the rest of the test cases for the two bit Adder...
+    return {false};
 }
