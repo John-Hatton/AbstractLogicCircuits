@@ -5,7 +5,10 @@
 #include <vector>
 #include "Adders/TwoBitAdder.h"
 
-TwoBitAdder::TwoBitAdder() = default;
+TwoBitAdder::TwoBitAdder() {
+        bitOneFullAdder = new FullAdder();
+        bitTwoFullAdder = new FullAdder();
+}
 
 bool TwoBitAdder::getInputX1() const {
     return inputX1;

@@ -614,7 +614,7 @@ public:
      * @param writeInvertedBufferA
      */
     void setWriteInvertedBufferA(InvertedBufferGate *writeInvertedBufferA);
-    
+
     D_FlipFlop *getWordZeroBitZero() const;
 
     void setWordZeroBitZero(D_FlipFlop *wordZeroBitZero);
