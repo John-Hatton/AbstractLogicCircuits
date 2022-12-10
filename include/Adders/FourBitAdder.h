@@ -75,9 +75,6 @@ private:
 
 
     bool sumOneOut;
-public:
-
-private:
 
     bool sumTwoOut;
 

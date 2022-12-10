@@ -147,7 +147,31 @@ void FourBitAdder::setCarryOut(bool myCarryOut) {
 }
 
 std::vector<bool> FourBitAdder::answer() {
-    return {false,false,false,false,false};
+
+    bitOneFullAdder->setInputX(inputX1);
+    bitOneFullAdder->setInputY(inputY1);
+    bitOneFullAdder->answer();
+    sumOneOut = bitOneFullAdder->getSum();
+    bitTwoFullAdder->setCarryIn(bitOneFullAdder->getCarryOut());
+    bitTwoFullAdder->setInputX(inputX2);
+    bitTwoFullAdder->setInputY(inputY2);
+    bitTwoFullAdder->answer();
+    sumTwoOut = bitTwoFullAdder->getSum();
+    bitThreeFullAdder->setCarryIn(bitTwoFullAdder->getCarryOut());
+    bitThreeFullAdder->setInputX(inputX3);
+    bitThreeFullAdder->setInputY(inputY3);
+    bitThreeFullAdder->answer();
+    sumThreeOut = bitThreeFullAdder->getSum();
+    bitFourFullAdder->setCarryIn(bitTwoFullAdder->getCarryOut());
+    bitFourFullAdder->setInputX(inputX4);
+    bitFourFullAdder->setInputY(inputY4);
+    bitFourFullAdder->answer();
+    sumFourOut = bitFourFullAdder->getSum();
+    carryOut = bitFourFullAdder->getCarryOut();
+
+
+
+    return {carryOut,sumFourOut,sumThreeOut,sumTwoOut,sumOneOut};
 }
 
 

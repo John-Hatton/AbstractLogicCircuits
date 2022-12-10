@@ -48,7 +48,7 @@ void FullAdder::setCarryOut(int myCarryOut) {
     carryOut = myCarryOut;
 }
 
-std::string FullAdder::answer() {
+std::vector<bool> FullAdder::answer() {
 
     // Initialize objects
 
@@ -97,28 +97,28 @@ std::string FullAdder::answer() {
         {
             // Result is 0+0
             sum = mySum;
-            return "0001";
+            return {carryOut,sum};
         }
         else if (!mySum && (!inputX && inputY))
         {
             // Result is 0+1 + 1 (CARRY IN!!!)
             sum = mySum;
             carryOut = myCarryOut;
-            return "0010";
+            return {carryOut,sum};
         }
         else if (!mySum && (inputX && !inputY))
         {
             // Result is 1+0 + 1 (CARRY IN!!!)
             sum = mySum;
             carryOut = myCarryOut;
-            return "0010";
+            return {carryOut,sum};
         }
         else if ((mySum && myCarryOut) && (inputX && inputY))
         {
             // Result is 1+1 + 1 (CARRY IN!!!)
             sum = mySum;
             carryOut = myCarryOut;
-            return "0011";
+            return {carryOut,sum};
         }
         else
         {
@@ -134,33 +134,32 @@ std::string FullAdder::answer() {
         {
             sum = mySum;
             // Result is 0+0
-            return "0000";
+            return {carryOut,sum};
         }
         else if ((mySum && !myCarryOut) && (!inputX && inputY))
         {
             // Result is 0+1
             sum = mySum;
-            return "0001";
+            return {carryOut,sum};
         }
         else if ((mySum && !myCarryOut) && (inputX && !inputY))
         {
             // Result is 1+0
             sum = mySum;
-            return "0001";
+            return {carryOut,sum};
         }
         else if ((!mySum && myCarryOut) && (inputX && inputY))
         {
             // Result is 1+1
             sum = mySum;
             carryOut = myCarryOut;
-            return "0010";
+            return {carryOut,sum};
         }
         else
         {
             std::cout << "Something went very wrong..." << std::endl;
-            return "F0FF";
         }
     }
-    return "-1";
+    return {false};
 }
 

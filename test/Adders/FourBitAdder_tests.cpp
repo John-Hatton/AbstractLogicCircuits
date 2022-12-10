@@ -23,6 +23,7 @@ TEST(Two_Bit_Adder, TwoBitAdder_0000__0000_Test)
 
     std::vector<bool> actual = myFourBitAdder->answer();
 
+    // Four bit Sum + Carry so 0 0000
     std::vector<bool> expected = {false, false, false, false, false};
     // 3. Test
 

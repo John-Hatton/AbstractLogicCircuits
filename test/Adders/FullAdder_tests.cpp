@@ -20,11 +20,12 @@ TEST(Full_Adder, FullAdder_0__0_Test)
     myFullAdder->setInputX(false);
     myFullAdder->setInputY(false);
 
-    std::string answer = myFullAdder->answer();
+    std::vector<bool> actual = myFullAdder->answer();
+    std::vector<bool> expected = {false, false};
 
     // 3. Test
 
-    EXPECT_EQ(answer,"0000");
+    EXPECT_EQ(actual, expected);
     EXPECT_EQ(myFullAdder->getCarryIn(), false);
     EXPECT_EQ(myFullAdder->getSum(), false);
     EXPECT_EQ(myFullAdder->getCarryOut(), false);
@@ -42,11 +43,12 @@ TEST(Full_Adder, FullAdder_0__1_Test)
     myFullAdder->setInputX(false);
     myFullAdder->setInputY(true);
 
-    std::string answer = myFullAdder->answer();
+    std::vector<bool> actual = myFullAdder->answer();
+    std::vector<bool> expected = {false, true};
 
     // 3. Test
 
-    EXPECT_EQ(answer,"0001");
+    EXPECT_EQ(actual, expected);
     EXPECT_EQ(myFullAdder->getCarryIn(), false);
     EXPECT_EQ(myFullAdder->getCarryOut(), false);
 
@@ -64,11 +66,12 @@ TEST(Full_Adder, FullAdder_1__0_Test)
     myFullAdder->setInputX(true);
     myFullAdder->setInputY(false);
 
-    std::string answer = myFullAdder->answer();
+    std::vector<bool> actual = myFullAdder->answer();
+    std::vector<bool> expected = {false, true};
 
     // 3. Test
 
-    EXPECT_EQ(answer,"0001");
+    EXPECT_EQ(actual, expected);
     EXPECT_EQ(myFullAdder->getCarryIn(), false);
     EXPECT_EQ(myFullAdder->getCarryOut(), false);
 
@@ -86,11 +89,12 @@ TEST(Full_Adder, FullAdder_1__1_Test)
     myFullAdder->setInputX(true);
     myFullAdder->setInputY(true);
 
-    std::string answer = myFullAdder->answer();
+    std::vector<bool> actual = myFullAdder->answer();
+    std::vector<bool> expected = {true, false};
 
     // 3. Test
 
-    EXPECT_EQ(answer,"0010");
+    EXPECT_EQ(actual, expected);
     EXPECT_EQ(myFullAdder->getCarryIn(), false);
     EXPECT_EQ(myFullAdder->getCarryOut(), true);
 
@@ -116,11 +120,12 @@ TEST(Full_Adder, FullAdder_0__0_CarryIn_Test)
     myFullAdder->setInputY(false);
     myFullAdder->setCarryIn(true);
 
-    std::string answer = myFullAdder->answer();
+    std::vector<bool> actual = myFullAdder->answer();
+    std::vector<bool> expected = {false, true};
 
     // 3. Test
 
-    EXPECT_EQ(answer,"0001");
+    EXPECT_EQ(actual, expected);
     EXPECT_EQ(myFullAdder->getCarryIn(), true);
     EXPECT_EQ(myFullAdder->getSum(), true);
     EXPECT_EQ(myFullAdder->getCarryOut(), false);
@@ -140,11 +145,12 @@ TEST(Full_Adder, FullAdder_0__1_CarryIn_Test)
     myFullAdder->setInputY(true);
     myFullAdder->setCarryIn(true);
 
-    std::string answer = myFullAdder->answer();
+    std::vector<bool> actual = myFullAdder->answer();
+    std::vector<bool> expected = {true, false};
 
     // 3. Test
 
-    EXPECT_EQ(answer,"0010");
+    EXPECT_EQ(actual, expected);
     EXPECT_EQ(myFullAdder->getCarryIn(), true);
     EXPECT_EQ(myFullAdder->getSum(), false);
     EXPECT_EQ(myFullAdder->getCarryOut(), true);
@@ -164,11 +170,12 @@ TEST(Full_Adder, FullAdder_1__0_CarryIn_Test)
     myFullAdder->setInputY(true);
     myFullAdder->setCarryIn(true);
 
-    std::string answer = myFullAdder->answer();
+    std::vector<bool> actual = myFullAdder->answer();
+    std::vector<bool> expected = {true, false};
 
     // 3. Test
 
-    EXPECT_EQ(answer,"0010");
+    EXPECT_EQ(actual, expected);
     EXPECT_EQ(myFullAdder->getCarryIn(), true);
     EXPECT_EQ(myFullAdder->getSum(), false);
     EXPECT_EQ(myFullAdder->getCarryOut(), true);
@@ -188,11 +195,12 @@ TEST(Full_Adder, FullAdder_1__1_CarryIn_Test)
     myFullAdder->setInputY(true);
     myFullAdder->setCarryIn(true);
 
-    std::string answer = myFullAdder->answer();
+    std::vector<bool> actual = myFullAdder->answer();
+    std::vector<bool> expected = {true, true};
 
     // 3. Test
 
-    EXPECT_EQ(answer,"0011");
+    EXPECT_EQ(actual, expected);
     EXPECT_EQ(myFullAdder->getCarryIn(), true);
     EXPECT_EQ(myFullAdder->getSum(), true);
     EXPECT_EQ(myFullAdder->getCarryOut(), true);

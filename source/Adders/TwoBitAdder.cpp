@@ -60,9 +60,9 @@ void TwoBitAdder::setBitTwoFullAdder(FullAdder* fA2) {
 
 std::vector<bool> TwoBitAdder::answer() {
 
-
-    auto fullAdderOne = new FullAdder();
-    auto fullAdderTwo = new FullAdder();
+    // TODO:
+    auto fullAdderOne = bitOneFullAdder;
+    auto fullAdderTwo = bitTwoFullAdder;
 
     fullAdderOne->setInputX(inputX1);
     fullAdderOne->setInputY(inputY1);
