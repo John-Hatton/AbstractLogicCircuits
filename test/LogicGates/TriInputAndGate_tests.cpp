@@ -4,7 +4,7 @@
 
 #include <gtest/gtest.h>
 
-#include "LogicGates/TriInputAndGate.cpp"
+#include "../../source/LogicGates/TriInputAndGate.cpp"
 
 
 TEST(TRI_STATE_AND_Gate, triStateAndGate_0_and_0_and_0_Test)

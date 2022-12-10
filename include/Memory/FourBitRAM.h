@@ -7,9 +7,9 @@
 #include <vector>
 #include "Memory/D_FlipFlop.h"
 #include "LogicGates/TriInputAndGate.h"
-#include "../../source/LogicGates/QuadInputNorGate.h"
+#include "LogicGates/QuadInputNorGate.h"
 #include "LogicGates/NandGate.h"
-#include "../../source/LogicGates/RightInvertedAndGate.h"
+#include "LogicGates/RightInvertedAndGate.h"
 #include "LogicGates/InvertedBufferGate.h"
 
 class FourBitRAM {
@@ -155,19 +155,19 @@ private:
 
     TriInputAndGate* readDecoderOutputThreeAndOne;
 
-    TriInputAndGate* readDecoderOutputThreeTriAndTwo;
+    TriInputAndGate* readDecoderOutputThreeAndTwo;
 
-    TriInputAndGate* readDecoderOutputThreeTriAndThree;
+    TriInputAndGate* readDecoderOutputThreeAndThree;
 
-    TriInputAndGate* readDecoderOutputThreeTriAndFour;
+    TriInputAndGate* readDecoderOutputThreeAndFour;
 
-    TriInputAndGate* readDecoderOutputFourTriAndOne;
+    TriInputAndGate* readDecoderOutputFourAndOne;
 
-    TriInputAndGate* readDecoderOutputFourTriAndTwo;
+    TriInputAndGate* readDecoderOutputFourAndTwo;
 
-    TriInputAndGate* readDecoderOutputFourTriAndThree;
+    TriInputAndGate* readDecoderOutputFourAndThree;
 
-    TriInputAndGate* readDecoderOutputFourTriAndFour;
+    TriInputAndGate* readDecoderOutputFourAndFour;
 
 
     // QUAD INPUT NOR GATES
@@ -422,6 +422,11 @@ public:
 
     void setWordThreeBitThreeAnd(AndGate *wordThreeBitThreeAnd);
 
+
+
+
+
+
     TriInputAndGate *getReadDecoderOutputOneAndOne() const;
 
     void setReadDecoderOutputOneAndOne(TriInputAndGate *readDecoderOutputOneAndOne);
@@ -458,33 +463,36 @@ public:
 
     void setReadDecoderOutputThreeAndOne(TriInputAndGate *readDecoderOutputThreeAndOne);
 
-    TriInputAndGate *getReadDecoderOutputThreeTriAndTwo() const;
+    TriInputAndGate *getReadDecoderOutputThreeAndTwo() const;
 
-    void setReadDecoderOutputThreeTriAndTwo(TriInputAndGate *readDecoderOutputThreeTriAndTwo);
+    void setReadDecoderOutputThreeAndTwo(TriInputAndGate *readDecoderOutputThreeAndTwo);
 
-    TriInputAndGate *getReadDecoderOutputThreeTriAndThree() const;
+    TriInputAndGate *getReadDecoderOutputThreeAndThree() const;
 
-    void setReadDecoderOutputThreeTriAndThree(TriInputAndGate *readDecoderOutputThreeTriAndThree);
+    void setReadDecoderOutputThreeAndThree(TriInputAndGate *readDecoderOutputThreeAndThree);
 
-    TriInputAndGate *getReadDecoderOutputThreeTriAndFour() const;
+    TriInputAndGate *getReadDecoderOutputThreeAndFour() const;
 
-    void setReadDecoderOutputThreeTriAndFour(TriInputAndGate *readDecoderOutputThreeTriAndFour);
+    void setReadDecoderOutputThreeAndFour(TriInputAndGate *readDecoderOutputThreeAndFour);
 
-    TriInputAndGate *getReadDecoderOutputFourTriAndOne() const;
+    TriInputAndGate *getReadDecoderOutputFourAndOne() const;
 
-    void setReadDecoderOutputFourTriAndOne(TriInputAndGate *readDecoderOutputFourTriAndOne);
+    void setReadDecoderOutputFourAndOne(TriInputAndGate *readDecoderOutputFourAndOne);
 
-    TriInputAndGate *getReadDecoderOutputFourTriAndTwo() const;
+    TriInputAndGate *getReadDecoderOutputFourAndTwo() const;
 
-    void setReadDecoderOutputFourTriAndTwo(TriInputAndGate *readDecoderOutputFourTriAndTwo);
+    void setReadDecoderOutputFourAndTwo(TriInputAndGate *readDecoderOutputFourAndTwo);
 
-    TriInputAndGate *getReadDecoderOutputFourTriAndThree() const;
+    TriInputAndGate *getReadDecoderOutputFourAndThree() const;
 
-    void setReadDecoderOutputFourTriAndThree(TriInputAndGate *readDecoderOutputFourTriAndThree);
+    void setReadDecoderOutputFourAndThree(TriInputAndGate *readDecoderOutputFourAndThree);
 
-    TriInputAndGate *getReadDecoderOutputFourTriAndFour() const;
+    TriInputAndGate *getReadDecoderOutputFourAndFour() const;
 
-    void setReadDecoderOutputFourTriAndFour(TriInputAndGate *readDecoderOutputFourTriAndFour);
+    void setReadDecoderOutputFourAndFour(TriInputAndGate *readDecoderOutputFourAndFour);
+
+
+
 
     QuadInputNorGate *getDataZeroQuadNor() const;
 

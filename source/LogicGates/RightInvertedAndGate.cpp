@@ -2,9 +2,11 @@
 // Created by snake on 12/9/2022.
 //
 
-#include "RightInvertedAndGate.h"
+#include "LogicGates/RightInvertedAndGate.h"
 
-RightInvertedAndGate::RightInvertedAndGate() = default;
+RightInvertedAndGate::RightInvertedAndGate() {
+
+}
 
 bool RightInvertedAndGate::getInputX() const {
     return inputX;

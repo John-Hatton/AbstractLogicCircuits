@@ -2,7 +2,7 @@
 // Created by snake on 12/8/2022.
 //
 
-#include "TriInputAndGate.h"
+#include "LogicGates/TriInputAndGate.h"
 
 TriInputAndGate::TriInputAndGate() {
 

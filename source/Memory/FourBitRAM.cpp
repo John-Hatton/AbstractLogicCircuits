@@ -4,7 +4,8 @@
 
 #include "Memory/FourBitRAM.h"
 
-FourBitRAM::FourBitRAM() {
+
+FourBitRAM::FourBitRAM() { // Constructor Prologue
 
     // D_FlipFlops
     wordZeroBitZero      = new D_FlipFlop();
@@ -26,9 +27,22 @@ FourBitRAM::FourBitRAM() {
 
     // Right Inverted And Gates
 
-    leftRIAG             = new RightInvertedAndGate();
-    rightRIAG            = new RightInvertedAndGate();
+    leftRIAG  = new RightInvertedAndGate();
+    rightRIAG = new RightInvertedAndGate();
 
+    writeNotA = new NotGate();
+
+    readIBGateRead = new InvertedBufferGate();
+
+    writeInvertedBufferA = new InvertedBufferGate();
+
+    readNotA = new NotGate();
+
+    readNotB = new NotGate();
+
+    readIBGateA = new InvertedBufferGate();
+
+    readIBGateB = new InvertedBufferGate();
 
 
     // AND Gates
@@ -53,8 +67,7 @@ FourBitRAM::FourBitRAM() {
     // TriInputAndGates
 
 
-    readDecoderOutputOneAndOne;
-
+    readDecoderOutputOneAndOne        = new TriInputAndGate();
     readDecoderOutputOneAndTwo        = new TriInputAndGate();
     readDecoderOutputOneAndThree      = new TriInputAndGate();
     readDecoderOutputOneAndFour       = new TriInputAndGate();
@@ -63,13 +76,15 @@ FourBitRAM::FourBitRAM() {
     readDecoderOutputTwoAndThree      = new TriInputAndGate();
     readDecoderOutputTwoAndFour       = new TriInputAndGate();
     readDecoderOutputThreeAndOne      = new TriInputAndGate();
-    readDecoderOutputThreeTriAndTwo   = new TriInputAndGate();
-    readDecoderOutputThreeTriAndThree = new TriInputAndGate();
-    readDecoderOutputThreeTriAndFour  = new TriInputAndGate();
-    readDecoderOutputFourTriAndOne    = new TriInputAndGate();
-    readDecoderOutputFourTriAndTwo    = new TriInputAndGate();
-    readDecoderOutputFourTriAndThree  = new TriInputAndGate();
-    readDecoderOutputFourTriAndFour   = new TriInputAndGate();
+    readDecoderOutputThreeAndTwo   = new TriInputAndGate();
+    readDecoderOutputThreeAndThree = new TriInputAndGate();
+    readDecoderOutputThreeAndFour  = new TriInputAndGate();
+    readDecoderOutputFourAndOne    = new TriInputAndGate();
+    readDecoderOutputFourAndTwo    = new TriInputAndGate();
+    readDecoderOutputFourAndThree  = new TriInputAndGate();
+    readDecoderOutputFourAndFour   = new TriInputAndGate();
+
+
 
     // QuadInputNorGates
 
@@ -88,7 +103,7 @@ FourBitRAM::FourBitRAM() {
 
 
 
-}
+} // Constructor Epilogue
 
 bool FourBitRAM::isData0() const {
     return data0;
@@ -179,7 +194,7 @@ void FourBitRAM::setWriteInputWb(bool writeInputWb) {
 }
 
 bool FourBitRAM::isReadInputGr() const {
-    return readInputGR;
+    return readInputGR; // Might have to stay inverted, depending on diagram
 }
 
 void FourBitRAM::setReadInputGr(bool readInputGr) {
@@ -473,8 +488,8 @@ AndGate *FourBitRAM::getWordTwoBitZeroAnd() const {
     return wordTwoBitZeroAnd;
 }
 
-void FourBitRAM::setWordTwoBitZeroAnd(AndGate *wordTwpBitZeroAnd) {
-    FourBitRAM::wordTwoBitZeroAnd = wordTwpBitZeroAnd;
+void FourBitRAM::setWordTwoBitZeroAnd(AndGate *wordTwoBitZeroAnd) {
+    FourBitRAM::wordTwoBitZeroAnd = wordTwoBitZeroAnd;
 }
 
 AndGate *FourBitRAM::getWordTwoBitOneAnd() const {
@@ -605,60 +620,60 @@ void FourBitRAM::setReadDecoderOutputThreeAndOne(TriInputAndGate *readDecoderOut
     FourBitRAM::readDecoderOutputThreeAndOne = readDecoderOutputThreeAndOne;
 }
 
-TriInputAndGate *FourBitRAM::getReadDecoderOutputThreeTriAndTwo() const {
-    return readDecoderOutputThreeTriAndTwo;
+TriInputAndGate *FourBitRAM::getReadDecoderOutputThreeAndTwo() const {
+    return readDecoderOutputThreeAndTwo;
 }
 
-void FourBitRAM::setReadDecoderOutputThreeTriAndTwo(TriInputAndGate *readDecoderOutputThreeTriAndTwo) {
-    FourBitRAM::readDecoderOutputThreeTriAndTwo = readDecoderOutputThreeTriAndTwo;
+void FourBitRAM::setReadDecoderOutputThreeAndTwo(TriInputAndGate *readDecoderOutputThreeAndTwo) {
+    FourBitRAM::readDecoderOutputThreeAndTwo = readDecoderOutputThreeAndTwo;
 }
 
-TriInputAndGate *FourBitRAM::getReadDecoderOutputThreeTriAndThree() const {
-    return readDecoderOutputThreeTriAndThree;
+TriInputAndGate *FourBitRAM::getReadDecoderOutputThreeAndThree() const {
+    return readDecoderOutputThreeAndThree;
 }
 
-void FourBitRAM::setReadDecoderOutputThreeTriAndThree(TriInputAndGate *readDecoderOutputThreeTriAndThree) {
-    FourBitRAM::readDecoderOutputThreeTriAndThree = readDecoderOutputThreeTriAndThree;
+void FourBitRAM::setReadDecoderOutputThreeAndThree(TriInputAndGate *readDecoderOutputThreeAndThree) {
+    FourBitRAM::readDecoderOutputThreeAndThree = readDecoderOutputThreeAndThree;
 }
 
-TriInputAndGate *FourBitRAM::getReadDecoderOutputThreeTriAndFour() const {
-    return readDecoderOutputThreeTriAndFour;
+TriInputAndGate *FourBitRAM::getReadDecoderOutputThreeAndFour() const {
+    return readDecoderOutputThreeAndFour;
 }
 
-void FourBitRAM::setReadDecoderOutputThreeTriAndFour(TriInputAndGate *readDecoderOutputThreeTriAndFour) {
-    FourBitRAM::readDecoderOutputThreeTriAndFour = readDecoderOutputThreeTriAndFour;
+void FourBitRAM::setReadDecoderOutputThreeAndFour(TriInputAndGate *readDecoderOutputThreeAndFour) {
+    FourBitRAM::readDecoderOutputThreeAndFour = readDecoderOutputThreeAndFour;
 }
 
-TriInputAndGate *FourBitRAM::getReadDecoderOutputFourTriAndOne() const {
-    return readDecoderOutputFourTriAndOne;
+TriInputAndGate *FourBitRAM::getReadDecoderOutputFourAndOne() const {
+    return readDecoderOutputFourAndOne;
 }
 
-void FourBitRAM::setReadDecoderOutputFourTriAndOne(TriInputAndGate *readDecoderOutputFourTriAndOne) {
-    FourBitRAM::readDecoderOutputFourTriAndOne = readDecoderOutputFourTriAndOne;
+void FourBitRAM::setReadDecoderOutputFourAndOne(TriInputAndGate *readDecoderOutputFourAndOne) {
+    FourBitRAM::readDecoderOutputFourAndOne = readDecoderOutputFourAndOne;
 }
 
-TriInputAndGate *FourBitRAM::getReadDecoderOutputFourTriAndTwo() const {
-    return readDecoderOutputFourTriAndTwo;
+TriInputAndGate *FourBitRAM::getReadDecoderOutputFourAndTwo() const {
+    return readDecoderOutputFourAndTwo;
 }
 
-void FourBitRAM::setReadDecoderOutputFourTriAndTwo(TriInputAndGate *readDecoderOutputFourTriAndTwo) {
-    FourBitRAM::readDecoderOutputFourTriAndTwo = readDecoderOutputFourTriAndTwo;
+void FourBitRAM::setReadDecoderOutputFourAndTwo(TriInputAndGate *readDecoderOutputFourAndTwo) {
+    FourBitRAM::readDecoderOutputFourAndTwo = readDecoderOutputFourAndTwo;
 }
 
-TriInputAndGate *FourBitRAM::getReadDecoderOutputFourTriAndThree() const {
-    return readDecoderOutputFourTriAndThree;
+TriInputAndGate *FourBitRAM::getReadDecoderOutputFourAndThree() const {
+    return readDecoderOutputFourAndThree;
 }
 
-void FourBitRAM::setReadDecoderOutputFourTriAndThree(TriInputAndGate *readDecoderOutputFourTriAndThree) {
-    FourBitRAM::readDecoderOutputFourTriAndThree = readDecoderOutputFourTriAndThree;
+void FourBitRAM::setReadDecoderOutputFourAndThree(TriInputAndGate *readDecoderOutputFourAndThree) {
+    FourBitRAM::readDecoderOutputFourAndThree = readDecoderOutputFourAndThree;
 }
 
-TriInputAndGate *FourBitRAM::getReadDecoderOutputFourTriAndFour() const {
-    return readDecoderOutputFourTriAndFour;
+TriInputAndGate *FourBitRAM::getReadDecoderOutputFourAndFour() const {
+    return readDecoderOutputFourAndFour;
 }
 
-void FourBitRAM::setReadDecoderOutputFourTriAndFour(TriInputAndGate *readDecoderOutputFourTriAndFour) {
-    FourBitRAM::readDecoderOutputFourTriAndFour = readDecoderOutputFourTriAndFour;
+void FourBitRAM::setReadDecoderOutputFourAndFour(TriInputAndGate *readDecoderOutputFourAndFour) {
+    FourBitRAM::readDecoderOutputFourAndFour = readDecoderOutputFourAndFour;
 }
 
 QuadInputNorGate *FourBitRAM::getDataZeroQuadNor() const {
@@ -729,12 +744,14 @@ std::vector<bool> FourBitRAM::currentState() {
 
     // Start with Read/Write Inputs
 
+    // Inputs: DataZero, DataOne, DataTwo, DataThree, WriteG, WriteA, WriteB, ReadR, ReadA, ReadB
+
     ///////////////////////// Step 1
 
     // WB
 
     rightRIAG->setInputX(writeInputGW);
-    rightRIAG->setInputY(!writeInputWB);
+    rightRIAG->setInputY(writeInputWB);
     rightRIAG->answer(); // Sets output variable for rightRIAG
 
     // GW
@@ -756,7 +773,6 @@ std::vector<bool> FourBitRAM::currentState() {
 
 
     // Read Inputs
-
     readIBGateRead->setInput(readInputGR);
     readIBGateRead->answer();
     readNotA->setInput(readInputRA);
@@ -956,9 +972,17 @@ std::vector<bool> FourBitRAM::currentState() {
     wordThreeBitThree->setData(data3);
     wordThreeBitThree->currentState();
 
+
+    // All D-Latches are populated
+
+    // All D-Latch And gates / latch inputs have been doubly verified...
+
+
     ////////////////////////////// Step 3
 
     // Tri Input And Gates
+
+    ///// Output Bit 1
 
     readDecoderOutputOneAndOne->setInputX(wordZeroBitZero->currentState());
     readDecoderOutputOneAndOne->setInputY(readNotB->answer());
@@ -981,34 +1005,87 @@ std::vector<bool> FourBitRAM::currentState() {
     readDecoderOutputOneAndFour->setInputZ(readIBGateA->answer());
     readDecoderOutputOneAndFour->answer();
 
-    // Bit One is Done
+
+    ////// Output Bit 2
+
+
+    readDecoderOutputTwoAndOne->setInputX(wordZeroBitOne->currentState());
+    readDecoderOutputTwoAndOne->setInputY(readNotB->answer());
+    readDecoderOutputTwoAndOne->setInputZ(readNotA->answer());
+    readDecoderOutputTwoAndOne->answer();
+
+
+    readDecoderOutputTwoAndTwo->setInputX(wordOneBitOne->currentState());
+    readDecoderOutputTwoAndTwo->setInputY(readNotB->answer());
+    readDecoderOutputTwoAndTwo->setInputZ(readIBGateA->answer());
+    readDecoderOutputTwoAndTwo->answer();
+
+    readDecoderOutputTwoAndThree->setInputX(wordTwoBitOne->currentState());
+    readDecoderOutputTwoAndThree->setInputY(readIBGateB->answer());
+    readDecoderOutputTwoAndThree->setInputZ(readNotA->answer());
+    readDecoderOutputTwoAndThree->answer();
+
+    readDecoderOutputTwoAndFour->setInputX(wordThreeBitOne->currentState());
+    readDecoderOutputTwoAndFour->setInputY(readIBGateB->answer());
+    readDecoderOutputTwoAndFour->setInputZ(readIBGateA->answer());
+    readDecoderOutputTwoAndFour->answer();
 
 
 
+    ///////// Output Bit 3
+
+    readDecoderOutputThreeAndOne->setInputX(wordZeroBitTwo->currentState());
+    readDecoderOutputThreeAndOne->setInputY(readNotB->answer());
+    readDecoderOutputThreeAndOne->setInputZ(readNotA->answer());
+    readDecoderOutputThreeAndOne->answer();
+
+    readDecoderOutputThreeAndTwo->setInputX(wordOneBitTwo->currentState());
+    readDecoderOutputThreeAndTwo->setInputY(readNotB->answer());
+    readDecoderOutputThreeAndTwo->setInputZ(readIBGateA->answer());
+    readDecoderOutputThreeAndTwo->answer();
+
+    readDecoderOutputThreeAndThree->setInputX(wordTwoBitTwo->currentState());
+    readDecoderOutputThreeAndThree->setInputY(readIBGateB->answer());
+    readDecoderOutputThreeAndThree->setInputZ(readNotA->answer());
+    readDecoderOutputThreeAndThree->answer();
+
+    readDecoderOutputThreeAndFour->setInputX(wordThreeBitTwo->currentState());
+    readDecoderOutputThreeAndFour->setInputY(readIBGateB->answer());
+    readDecoderOutputThreeAndFour->setInputZ(readIBGateA->answer());
+    readDecoderOutputThreeAndFour->answer();
+
+
+    ////////// Output Bit 4
 
 
 
+    readDecoderOutputFourAndOne->setInputX(wordZeroBitThree->currentState());
+    readDecoderOutputFourAndOne->setInputY(readNotB->answer());
+    readDecoderOutputFourAndOne->setInputZ(readNotA->answer());
+    readDecoderOutputFourAndOne->answer();
+
+    readDecoderOutputFourAndTwo->setInputX(wordOneBitThree->currentState());
+    readDecoderOutputFourAndTwo->setInputY(readNotB->answer());
+    readDecoderOutputFourAndTwo->setInputZ(readIBGateA->answer());
+    readDecoderOutputFourAndTwo->answer();
+
+    readDecoderOutputFourAndThree->setInputX(wordTwoBitThree->currentState());
+    readDecoderOutputFourAndThree->setInputY(readIBGateB->answer());
+    readDecoderOutputFourAndThree->setInputZ(readNotA->answer());
+    readDecoderOutputFourAndThree->answer();
+
+    readDecoderOutputFourAndFour->setInputX(wordThreeBitThree->currentState());
+    readDecoderOutputFourAndFour->setInputY(readIBGateB->answer());
+    readDecoderOutputFourAndFour->setInputZ(readIBGateA->answer());
+    readDecoderOutputFourAndFour->answer();
 
 
+    //////////////// Tri-Input AND Gates populated!
 
 
+    // Tri-Input gates input doubly verified...
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //////////////////////////////////// Step 4
 
     // Quad Input Nor Gates
 
@@ -1018,12 +1095,55 @@ std::vector<bool> FourBitRAM::currentState() {
     dataZeroQuadNor->setInputD(readDecoderOutputOneAndFour->answer());
     dataZeroQuadNor->answer(); // Should have output bit one!!!
 
-    return {};
+    dataOneQuadNor->setInputA(readDecoderOutputTwoAndOne->answer());
+    dataOneQuadNor->setInputB(readDecoderOutputTwoAndTwo->answer());
+    dataOneQuadNor->setInputC(readDecoderOutputTwoAndThree->answer());
+    dataOneQuadNor->setInputD(readDecoderOutputTwoAndFour->answer());
+    dataOneQuadNor->answer();
+
+    dataTwoQuadNor->setInputA(readDecoderOutputThreeAndOne->answer());
+    dataTwoQuadNor->setInputB(readDecoderOutputThreeAndTwo->answer());
+    dataTwoQuadNor->setInputC(readDecoderOutputThreeAndThree->answer());
+    dataTwoQuadNor->setInputD(readDecoderOutputThreeAndFour->answer());
+    dataTwoQuadNor->answer();
+
+    dataThreeQuadNor->setInputA(readDecoderOutputFourAndOne->answer());
+    dataThreeQuadNor->setInputB(readDecoderOutputFourAndTwo->answer());
+    dataThreeQuadNor->setInputC(readDecoderOutputFourAndThree->answer());
+    dataThreeQuadNor->setInputD(readDecoderOutputFourAndFour->answer());
+    dataThreeQuadNor->answer();
+
+
+    //////// Quad Nor Gates populated!
+
+
+    ////////////////////////// Step 5
+
+
+    // NandGates
+
+    outputNandOne->setInputX(dataZeroQuadNor->answer());
+    outputNandOne->setInputY(readIBGateRead->answer());
+    output1 = outputNandOne->answer(); // Set final state of Output
+
+    outputNandTwo->setInputX(dataOneQuadNor->answer());
+    outputNandTwo->setInputY(readIBGateRead->answer());
+    output2 = outputNandTwo->answer(); // Set final state of Output
+
+    outputNandThree->setInputX(dataTwoQuadNor->answer());
+    outputNandThree->setInputY(readIBGateRead->answer());
+    output3 = outputNandThree->answer(); // Set final state of Output
+
+    outputNandFour->setInputX(dataThreeQuadNor->answer());
+    outputNandFour->setInputY(readIBGateRead->answer());
+    output4 = outputNandFour->answer(); // Set final state of Output
+
+    return {output1, output2, output3, output4};
 }
 
 
 
 
 
-// Inputs: DataZero, DataOne, DataTwo, DataThree, WriteG, WriteA, WriteB, ReadR, ReadA, ReadB
+
 
