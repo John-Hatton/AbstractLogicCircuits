@@ -5,7 +5,7 @@
 #include "LogicGates/TriInputNandGate.h"
 
 TriInputNandGate::TriInputNandGate() {
-    output = true;
+        output = false;
 }
 
 bool TriInputNandGate::getInputX() const {

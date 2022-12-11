@@ -5,9 +5,7 @@
 #include "LogicGates/QuadInputNandGate.h"
 
 
-QuadInputNandGate::QuadInputNandGate() {
-    output = true;
-}
+QuadInputNandGate::QuadInputNandGate() = default;
 
 
 bool QuadInputNandGate::getInputA() const {

@@ -52,7 +52,7 @@ public:
 
     bool getWriteEnable() const;
 
-    void setWriteEnable(bool writeEnable);
+    void setWriteEnable(bool wEnable);
 
     bool getInputX() const;
 

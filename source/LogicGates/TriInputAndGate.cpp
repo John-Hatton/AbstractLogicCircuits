@@ -4,9 +4,7 @@
 
 #include "LogicGates/TriInputAndGate.h"
 
-TriInputAndGate::TriInputAndGate() {
-
-}
+TriInputAndGate::TriInputAndGate() = default;
 
 bool TriInputAndGate::getInputX() const {
     return inputX;

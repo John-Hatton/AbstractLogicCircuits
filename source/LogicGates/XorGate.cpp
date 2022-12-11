@@ -4,9 +4,7 @@
 
 #include "LogicGates/XorGate.h"
 
-XorGate::XorGate() {
-
-}
+XorGate::XorGate() = default;
 
 bool XorGate::getInputX() const {
     return inputX;

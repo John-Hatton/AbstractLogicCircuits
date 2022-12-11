@@ -4,9 +4,7 @@
 
 #include "LogicGates/QuadInputNorGate.h"
 
-QuadInputNorGate::QuadInputNorGate() {
-
-}
+QuadInputNorGate::QuadInputNorGate() = default;
 
 bool QuadInputNorGate::getInputA() const {
     return inputA;

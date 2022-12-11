@@ -4,9 +4,7 @@
 
 #include "LogicGates/InvertedBufferGate.h"
 
-InvertedBufferGate::InvertedBufferGate() {
-
-}
+InvertedBufferGate::InvertedBufferGate() = default;
 
 bool InvertedBufferGate::getInput() const {
     return input;
