@@ -60,88 +60,20 @@ void TwoBitAdder::setBitTwoFullAdder(FullAdder* fA2) {
 
 std::vector<bool> TwoBitAdder::answer() {
 
-    // TODO:
-    auto fullAdderOne = bitOneFullAdder;
-    auto fullAdderTwo = bitTwoFullAdder;
-
-    fullAdderOne->setInputX(inputX1);
-    fullAdderOne->setInputY(inputY1);
-    fullAdderOne->answer();
-
+    bitOneFullAdder->setInputX(inputX1);
+    bitOneFullAdder->setInputY(inputY1);
+    bitOneFullAdder->answer();
+    sumOneOut = bitOneFullAdder->getSum();
 
     // Set the carry out of the first adder to the carry in of the second.
-    fullAdderTwo->setCarryIn(fullAdderOne->getCarryOut());
+    bitTwoFullAdder->setCarryIn(bitOneFullAdder->getCarryOut());
+    bitTwoFullAdder->setInputX(inputX2);
+    bitTwoFullAdder->setInputY(inputY2);
+    bitTwoFullAdder->answer();
 
-    fullAdderTwo->setInputX(inputX2);
-    fullAdderTwo->setInputY(inputY2);
-    fullAdderTwo->answer();
+    sumTwoOut = bitTwoFullAdder->getSum();
+    carryOut = bitTwoFullAdder->getCarryOut();
 
+    return {carryOut, sumTwoOut, sumOneOut};
 
-    // Logic goes here!
-
-    bool adderOneSum = fullAdderOne->getSum();
-    bool adderTwoSum = fullAdderTwo->getSum();
-    bool adderOneCarryOut = fullAdderOne->getCarryOut();
-    bool adderTwoCarryOut = fullAdderTwo->getCarryOut();
-
-    sumOneOut = adderOneSum;
-    sumTwoOut = adderTwoSum;
-    carryOut = adderTwoCarryOut;
-
-    // TODO: The idea is, I want to replace those bottom inputs with these, so I'm actually using my logic gates.
-
-
-    // Case 1: 00 + 00 == 0000
-    if (!adderOneSum && !adderTwoSum && !adderOneCarryOut && !adderTwoCarryOut)
-    {
-        // Result is 0
-        //return "0 0000";
-        return {false,false,false};
-    }
-
-    // Cases 2-5 == 0001
-    else if(adderOneSum && !adderTwoSum && !adderOneCarryOut && !adderTwoCarryOut)
-    {
-        // Result is 1
-        //return "0 0001";
-        return {false, false, true};
-    }
-    else if(!adderOneSum && adderTwoSum && !adderOneCarryOut && !adderTwoCarryOut)
-    {
-        // Result is 1
-        //return "0 0010";
-        return {false,true, false};
-    }
-    else if(!adderOneSum && adderTwoSum && adderOneCarryOut && !adderTwoCarryOut)
-    {
-        // Result is 1
-        //return "0 0010";
-        return {false, true, false};
-    }
-    else if(!adderOneSum && !adderTwoSum && !adderOneCarryOut && adderTwoCarryOut)
-    {
-        // Result is 1
-        //return "0 0100";
-        return {true, false, false};
-    }
-    else if(!adderOneSum && !adderTwoSum && adderOneCarryOut && adderTwoCarryOut)
-    {
-        // Result is 1
-        //return "0 0101";
-        return {true, false, true};
-    }
-    else if(adderOneSum && !adderTwoSum && !adderOneCarryOut && adderTwoCarryOut)
-    {
-        // Result is 1
-        //return "0 0101";
-        return {true, false, true};
-    }
-    else if(!adderOneSum && adderTwoSum && adderOneCarryOut && adderTwoCarryOut)
-    {
-        // Result is 1
-        //return "0 0110";
-        return {true, true, false};
-    }
-
-    return {false};
 }
