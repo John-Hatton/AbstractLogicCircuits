@@ -677,6 +677,8 @@ FodyWeavers.xsd
 
 .idea/
 cmake-build-debug/
+html/
+latex/
 
 
 
