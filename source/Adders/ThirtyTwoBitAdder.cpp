@@ -554,7 +554,7 @@ void ThirtyTwoBitAdder::setBitsSeventeenThroughThirtyTwo16Ba(SixteenBitAdder *bi
     bitsSeventeenThroughThirtyTwo16BA = bitsSeventeenThroughThirtyTwo16Ba;
 }
 
-bool ThirtyTwoBitAdder::isOutput1() const {
+bool ThirtyTwoBitAdder::getOutput1() const {
     return output1;
 }
 
@@ -562,7 +562,7 @@ void ThirtyTwoBitAdder::setOutput1(bool output1) {
     ThirtyTwoBitAdder::output1 = output1;
 }
 
-bool ThirtyTwoBitAdder::isOutput2() const {
+bool ThirtyTwoBitAdder::getOutput2() const {
     return output2;
 }
 
@@ -570,7 +570,7 @@ void ThirtyTwoBitAdder::setOutput2(bool output2) {
     ThirtyTwoBitAdder::output2 = output2;
 }
 
-bool ThirtyTwoBitAdder::isOutput3() const {
+bool ThirtyTwoBitAdder::getOutput3() const {
     return output3;
 }
 
@@ -578,7 +578,7 @@ void ThirtyTwoBitAdder::setOutput3(bool output3) {
     ThirtyTwoBitAdder::output3 = output3;
 }
 
-bool ThirtyTwoBitAdder::isOutput4() const {
+bool ThirtyTwoBitAdder::getOutput4() const {
     return output4;
 }
 
@@ -586,7 +586,7 @@ void ThirtyTwoBitAdder::setOutput4(bool output4) {
     ThirtyTwoBitAdder::output4 = output4;
 }
 
-bool ThirtyTwoBitAdder::isOutput5() const {
+bool ThirtyTwoBitAdder::getOutput5() const {
     return output5;
 }
 
@@ -594,7 +594,7 @@ void ThirtyTwoBitAdder::setOutput5(bool output5) {
     ThirtyTwoBitAdder::output5 = output5;
 }
 
-bool ThirtyTwoBitAdder::isOutput6() const {
+bool ThirtyTwoBitAdder::getOutput6() const {
     return output6;
 }
 
@@ -602,7 +602,7 @@ void ThirtyTwoBitAdder::setOutput6(bool output6) {
     ThirtyTwoBitAdder::output6 = output6;
 }
 
-bool ThirtyTwoBitAdder::isOutput7() const {
+bool ThirtyTwoBitAdder::getOutput7() const {
     return output7;
 }
 
@@ -610,7 +610,7 @@ void ThirtyTwoBitAdder::setOutput7(bool output7) {
     ThirtyTwoBitAdder::output7 = output7;
 }
 
-bool ThirtyTwoBitAdder::isOutput8() const {
+bool ThirtyTwoBitAdder::getOutput8() const {
     return output8;
 }
 
@@ -618,7 +618,7 @@ void ThirtyTwoBitAdder::setOutput8(bool output8) {
     ThirtyTwoBitAdder::output8 = output8;
 }
 
-bool ThirtyTwoBitAdder::isOutput9() const {
+bool ThirtyTwoBitAdder::getOutput9() const {
     return output9;
 }
 
@@ -626,7 +626,7 @@ void ThirtyTwoBitAdder::setOutput9(bool output9) {
     ThirtyTwoBitAdder::output9 = output9;
 }
 
-bool ThirtyTwoBitAdder::isOutput10() const {
+bool ThirtyTwoBitAdder::getOutput10() const {
     return output10;
 }
 
@@ -634,7 +634,7 @@ void ThirtyTwoBitAdder::setOutput10(bool output10) {
     ThirtyTwoBitAdder::output10 = output10;
 }
 
-bool ThirtyTwoBitAdder::isOutput11() const {
+bool ThirtyTwoBitAdder::getOutput11() const {
     return output11;
 }
 
@@ -642,7 +642,7 @@ void ThirtyTwoBitAdder::setOutput11(bool output11) {
     ThirtyTwoBitAdder::output11 = output11;
 }
 
-bool ThirtyTwoBitAdder::isOutput12() const {
+bool ThirtyTwoBitAdder::getOutput12() const {
     return output12;
 }
 
@@ -650,7 +650,7 @@ void ThirtyTwoBitAdder::setOutput12(bool output12) {
     ThirtyTwoBitAdder::output12 = output12;
 }
 
-bool ThirtyTwoBitAdder::isOutput13() const {
+bool ThirtyTwoBitAdder::getOutput13() const {
     return output13;
 }
 
@@ -658,7 +658,7 @@ void ThirtyTwoBitAdder::setOutput13(bool output13) {
     ThirtyTwoBitAdder::output13 = output13;
 }
 
-bool ThirtyTwoBitAdder::isOutput14() const {
+bool ThirtyTwoBitAdder::getOutput14() const {
     return output14;
 }
 
@@ -666,7 +666,7 @@ void ThirtyTwoBitAdder::setOutput14(bool output14) {
     ThirtyTwoBitAdder::output14 = output14;
 }
 
-bool ThirtyTwoBitAdder::isOutput15() const {
+bool ThirtyTwoBitAdder::getOutput15() const {
     return output15;
 }
 
@@ -674,7 +674,7 @@ void ThirtyTwoBitAdder::setOutput15(bool output15) {
     ThirtyTwoBitAdder::output15 = output15;
 }
 
-bool ThirtyTwoBitAdder::isOutput16() const {
+bool ThirtyTwoBitAdder::getOutput16() const {
     return output16;
 }
 
@@ -682,7 +682,7 @@ void ThirtyTwoBitAdder::setOutput16(bool output16) {
     ThirtyTwoBitAdder::output16 = output16;
 }
 
-bool ThirtyTwoBitAdder::isOutput17() const {
+bool ThirtyTwoBitAdder::getOutput17() const {
     return output17;
 }
 
@@ -690,7 +690,7 @@ void ThirtyTwoBitAdder::setOutput17(bool output17) {
     ThirtyTwoBitAdder::output17 = output17;
 }
 
-bool ThirtyTwoBitAdder::isOutput18() const {
+bool ThirtyTwoBitAdder::getOutput18() const {
     return output18;
 }
 
@@ -698,7 +698,7 @@ void ThirtyTwoBitAdder::setOutput18(bool output18) {
     ThirtyTwoBitAdder::output18 = output18;
 }
 
-bool ThirtyTwoBitAdder::isOutput19() const {
+bool ThirtyTwoBitAdder::getOutput19() const {
     return output19;
 }
 
@@ -706,7 +706,7 @@ void ThirtyTwoBitAdder::setOutput19(bool output19) {
     ThirtyTwoBitAdder::output19 = output19;
 }
 
-bool ThirtyTwoBitAdder::isOutput20() const {
+bool ThirtyTwoBitAdder::getOutput20() const {
     return output20;
 }
 
@@ -714,7 +714,7 @@ void ThirtyTwoBitAdder::setOutput20(bool output20) {
     ThirtyTwoBitAdder::output20 = output20;
 }
 
-bool ThirtyTwoBitAdder::isOutput21() const {
+bool ThirtyTwoBitAdder::getOutput21() const {
     return output21;
 }
 
@@ -722,7 +722,7 @@ void ThirtyTwoBitAdder::setOutput21(bool output21) {
     ThirtyTwoBitAdder::output21 = output21;
 }
 
-bool ThirtyTwoBitAdder::isOutput22() const {
+bool ThirtyTwoBitAdder::getOutput22() const {
     return output22;
 }
 
@@ -730,7 +730,7 @@ void ThirtyTwoBitAdder::setOutput22(bool output22) {
     ThirtyTwoBitAdder::output22 = output22;
 }
 
-bool ThirtyTwoBitAdder::isOutput23() const {
+bool ThirtyTwoBitAdder::getOutput23() const {
     return output23;
 }
 
@@ -738,7 +738,7 @@ void ThirtyTwoBitAdder::setOutput23(bool output23) {
     ThirtyTwoBitAdder::output23 = output23;
 }
 
-bool ThirtyTwoBitAdder::isOutput24() const {
+bool ThirtyTwoBitAdder::getOutput24() const {
     return output24;
 }
 
@@ -746,7 +746,7 @@ void ThirtyTwoBitAdder::setOutput24(bool output24) {
     ThirtyTwoBitAdder::output24 = output24;
 }
 
-bool ThirtyTwoBitAdder::isOutput25() const {
+bool ThirtyTwoBitAdder::getOutput25() const {
     return output25;
 }
 
@@ -754,7 +754,7 @@ void ThirtyTwoBitAdder::setOutput25(bool output25) {
     ThirtyTwoBitAdder::output25 = output25;
 }
 
-bool ThirtyTwoBitAdder::isOutput26() const {
+bool ThirtyTwoBitAdder::getOutput26() const {
     return output26;
 }
 
@@ -762,7 +762,7 @@ void ThirtyTwoBitAdder::setOutput26(bool output26) {
     ThirtyTwoBitAdder::output26 = output26;
 }
 
-bool ThirtyTwoBitAdder::isOutput27() const {
+bool ThirtyTwoBitAdder::getOutput27() const {
     return output27;
 }
 
@@ -770,7 +770,7 @@ void ThirtyTwoBitAdder::setOutput27(bool output27) {
     ThirtyTwoBitAdder::output27 = output27;
 }
 
-bool ThirtyTwoBitAdder::isOutput28() const {
+bool ThirtyTwoBitAdder::getOutput28() const {
     return output28;
 }
 
@@ -778,7 +778,7 @@ void ThirtyTwoBitAdder::setOutput28(bool output28) {
     ThirtyTwoBitAdder::output28 = output28;
 }
 
-bool ThirtyTwoBitAdder::isOutput29() const {
+bool ThirtyTwoBitAdder::getOutput29() const {
     return output29;
 }
 
@@ -786,7 +786,7 @@ void ThirtyTwoBitAdder::setOutput29(bool output29) {
     ThirtyTwoBitAdder::output29 = output29;
 }
 
-bool ThirtyTwoBitAdder::isOutput30() const {
+bool ThirtyTwoBitAdder::getOutput30() const {
     return output30;
 }
 
@@ -794,7 +794,7 @@ void ThirtyTwoBitAdder::setOutput30(bool output30) {
     ThirtyTwoBitAdder::output30 = output30;
 }
 
-bool ThirtyTwoBitAdder::isOutput31() const {
+bool ThirtyTwoBitAdder::getOutput31() const {
     return output31;
 }
 
@@ -802,7 +802,7 @@ void ThirtyTwoBitAdder::setOutput31(bool output31) {
     ThirtyTwoBitAdder::output31 = output31;
 }
 
-bool ThirtyTwoBitAdder::isOutput32() const {
+bool ThirtyTwoBitAdder::getOutput32() const {
     return output32;
 }
 
