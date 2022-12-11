@@ -20,4 +20,11 @@ add_library(AbstractCircuits
         Memory/D_FlipFlop.cpp
         Memory/FourBitRAM.cpp
 
-        Adders/FourBitAdder.cpp ../include/Adders/FourBitAdder.h Adders/EightBitAdder.cpp ../include/Adders/EightBitAdder.h Adders/SixteenBitAdder.cpp ../include/Adders/SixteenBitAdder.h Adders/ThirtyTwoBitAdder.cpp ../include/Adders/ThirtyTwoBitAdder.h)
+        Adders/FourBitAdder.cpp
+        Adders/EightBitAdder.cpp
+        Adders/SixteenBitAdder.cpp
+        Adders/ThirtyTwoBitAdder.cpp
+        LogicGates/TriInputNandGate.cpp
+
+
+        Decoders/ThreeToEightLineDecoder.cpp ../include/Decoders/ThreeToEightLineDecoder.h LogicGates/QuadInputNandGate.cpp ../include/LogicGates/QuadInputNandGate.h LogicGates/TriInvertedAndGate.cpp ../include/LogicGates/TriInvertedAndGate.h)

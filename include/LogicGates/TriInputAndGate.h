@@ -28,7 +28,9 @@ private:
      */
     bool inputZ;
 
-
+    /*
+     * Represents the output of the Tri-Input AND Gate
+     */
     bool output;
 
 public:

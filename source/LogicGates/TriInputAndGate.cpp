@@ -36,8 +36,8 @@ bool TriInputAndGate::answer() {
     if (inputX && inputY && inputZ)
     {
         output = true;
-        return true;
+        return output;
     }
     output = false;
-    return false;
+    return output;
 }
