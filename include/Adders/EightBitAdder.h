@@ -13,6 +13,10 @@ class EightBitAdder {
 
 private:
     /**
+     * Represents the Carry In of the Eight Bit Adder.
+     */
+    bool carryIn;
+    /**
      * Represents the X1 input of the Eight Bit Adder.
      */
     bool inputX1;
@@ -171,8 +175,6 @@ private:
      * Represents the boolean value carried out of the Eight Bit Adder (the ninth bit).
      */
     bool carryOut;
-public:
-
 
 public:
 
@@ -180,6 +182,17 @@ public:
      * Default Constructor
      */
     EightBitAdder();
+
+    /**
+     * The Get Carry In function is a getter for the internal carryIn boolean.
+     * @return Returns the encapsulated value of carryOut.
+     */
+    bool getCarryIn() const;
+    /**
+   * The Set carryIn function is a setter for the internal carryIn boolean.
+   * @param myCarryIn Corresponds with the boolean value that's going out of carryIn.
+   */
+    void setCarryIn(bool myCarryIn);
 
     /**
      * The Get Input X1 function is a getter for the internal inputX1 boolean.
