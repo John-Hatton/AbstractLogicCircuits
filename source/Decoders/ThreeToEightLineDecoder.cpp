@@ -332,12 +332,18 @@ std::vector<bool> ThreeToEightLineDecoder::currentState() {
     outputLineY6 = quadInNandY6->answer();
 
     quadInNandY7->setInputA(selectInputIBA->answer());
-    quadInNandY7->setInputB(selectInputIBA->answer());
-    quadInNandY7->setInputC(selectInputIBA->answer());
+    quadInNandY7->setInputB(selectInputIBB->answer());
+    quadInNandY7->setInputC(selectInputIBC->answer());
     quadInNandY7->setInputD(enableInputs3InvAnd->answer());
     outputLineY7 = quadInNandY7->answer();
 
 
+    // Also remember, according to the datasheet, if G1 is EVER 0, we should always get all 1's (or 0's)
+
+    if (!enableInputG1)
+    {
+        return {false,false,false,false,false,false,false,false};
+    }
 
     // Remember, we return inverted outputs, because the original datasheet has
     // reverse polarity. We want to maintain normal polarity, and by doing so, we won't need
