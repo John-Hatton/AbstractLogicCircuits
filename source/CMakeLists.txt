@@ -20,4 +20,4 @@ add_library(AbstractCircuits
         Memory/D_FlipFlop.cpp
         Memory/FourBitRAM.cpp
 
-        Adders/FourBitAdder.cpp ../include/Adders/FourBitAdder.h Adders/EightBitAdder.cpp ../include/Adders/EightBitAdder.h)
+        Adders/FourBitAdder.cpp ../include/Adders/FourBitAdder.h Adders/EightBitAdder.cpp ../include/Adders/EightBitAdder.h Adders/SixteenBitAdder.cpp ../include/Adders/SixteenBitAdder.h)
