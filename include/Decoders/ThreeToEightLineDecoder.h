@@ -80,6 +80,8 @@ public:
 
     ThreeToEightLineDecoder();
 
+    ThreeToEightLineDecoder(std::vector<bool> inputVector, bool writeEnable);
+
     bool getEnableInputG1() const;
 
     void setEnableInputG1(bool enableInputG1);

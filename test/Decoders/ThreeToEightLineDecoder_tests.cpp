@@ -161,3 +161,47 @@ TEST(Three_to_Eight_Line_Decoder, Three_to_Eight_Line_Decoder_GOne1_G2A0_G2B0_A0
     EXPECT_EQ(actual,expected);
 
 }
+
+
+TEST(Three_to_Eight_Line_Decoder, Three_to_Eight_Line_Decoder_Overloaded_Constructor___Test)
+{
+
+    // 1. Setup
+
+    std::vector<bool> dataInput = {true, true, true}; // 0111 : 7 in Binary...
+    bool writeEnable = true;
+
+    auto my3To8LineDecoder = new ThreeToEightLineDecoder(dataInput, writeEnable);
+
+    std::vector<bool> actual = {};
+    std::vector<bool> expected = {false,false,false,false,false,false,false,true};
+
+
+    actual = my3To8LineDecoder->currentState();
+
+
+    // 3. Test
+
+    EXPECT_EQ(actual,expected);
+
+}
+
+TEST(Three_to_Eight_Line_Decoder, Three_to_Eight_Line_Decoder_Overloaded_Constructor___Test2)
+{
+
+    // 1. Setup
+
+    auto my3To8LineDecoder = new ThreeToEightLineDecoder({false, true, false}, true);
+
+    std::vector<bool> actual = {};
+    std::vector<bool> expected = {false,false,true,false,false,false,false,false};
+
+
+    actual = my3To8LineDecoder->currentState();
+
+
+    // 3. Test
+
+    EXPECT_EQ(actual,expected);
+
+}

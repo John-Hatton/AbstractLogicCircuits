@@ -29,6 +29,49 @@ ThreeToEightLineDecoder::ThreeToEightLineDecoder() {
     quadInNandY7 = new QuadInputNandGate();
 }
 
+
+ThreeToEightLineDecoder::ThreeToEightLineDecoder(std::vector<bool> dataInputVector, bool writeEnable) {
+
+    if (dataInputVector.size() == 3)
+    {
+        // Remember, the way this thing works, bit1 (or0 if I've indexed that way)
+        // is always the LSB, and on the far RIGHT! That is, unless I'm working with
+        // a DECODER!!! However, when reading binary inputs, they're coming in as binary inputs.
+        // LSB is always the last index.
+
+        enableInputG1 = writeEnable;
+        enableInputG2A = false; // No need to change, because we can just use one switch
+        enableInputG2B = false; // See the test cases for more clarity...
+
+        inputA = dataInputVector.at(0);
+        inputB = dataInputVector.at(1);
+        inputC = dataInputVector.at(2);
+
+        enableNotG1 = new NotGate();
+        enableInputs3InvAnd = new TriInvertedAndGate();
+        selectInputNotA = new NotGate();
+        selectInputNotB = new NotGate();
+        selectInputNotC = new NotGate();
+        selectInputIBA = new InvertedBufferGate();
+        selectInputIBB = new InvertedBufferGate();
+        selectInputIBC = new InvertedBufferGate();
+
+        quadInNandY0 = new QuadInputNandGate();
+        quadInNandY1 = new QuadInputNandGate();
+        quadInNandY2 = new QuadInputNandGate();
+        quadInNandY3 = new QuadInputNandGate();
+        quadInNandY4 = new QuadInputNandGate();
+        quadInNandY5 = new QuadInputNandGate();
+        quadInNandY6 = new QuadInputNandGate();
+        quadInNandY7 = new QuadInputNandGate();
+
+        // Once we've gotten all our inputs, and have our memory squared away,
+        // we can call currentState(); This will populate our outputs! ;)
+
+        currentState();
+    }
+}
+
 bool ThreeToEightLineDecoder::getEnableInputG1() const {
     return enableInputG1;
 }
