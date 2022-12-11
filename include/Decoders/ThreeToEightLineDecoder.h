@@ -59,31 +59,48 @@ private:
 
     QuadInputNandGate* quadInNandY7;
 
+
+    bool outputLineY0;
+
+    bool outputLineY1;
+
+    bool outputLineY2;
+
+    bool outputLineY3;
+
+    bool outputLineY4;
+
+    bool outputLineY5;
+
+    bool outputLineY6;
+
+    bool outputLineY7;
+
 public:
 
     ThreeToEightLineDecoder();
 
-    bool isEnableInputG1() const;
+    bool getEnableInputG1() const;
 
     void setEnableInputG1(bool enableInputG1);
 
-    bool isEnableInputG2A() const;
+    bool getEnableInputG2A() const;
 
     void setEnableInputG2A(bool enableInputG2A);
 
-    bool isEnableInputG2B() const;
+    bool getEnableInputG2B() const;
 
     void setEnableInputG2B(bool enableInputG2B);
 
-    bool isInputA() const;
+    bool getInputA() const;
 
     void setInputA(bool inputA);
 
-    bool isInputB() const;
+    bool getInputB() const;
 
     void setInputB(bool inputB);
 
-    bool isInputC() const;
+    bool getInputC() const;
 
     void setInputC(bool inputC);
 
@@ -150,6 +167,38 @@ public:
     QuadInputNandGate *getQuadInNandY7() const;
 
     void setQuadInNandY7(QuadInputNandGate *quadInNandY7);
+
+    bool getOutputLineY0() const;
+
+    void setOutputLineY0(bool outputLineY0);
+
+    bool getOutputLineY1() const;
+
+    void setOutputLineY1(bool outputLineY1);
+
+    bool getOutputLineY2() const;
+
+    void setOutputLineY2(bool outputLineY2);
+
+    bool getOutputLineY3() const;
+
+    void setOutputLineY3(bool outputLineY3);
+
+    bool getOutputLineY4() const;
+
+    void setOutputLineY4(bool outputLineY4);
+
+    bool getOutputLineY5() const;
+
+    void setOutputLineY5(bool outputLineY5);
+
+    bool getOutputLineY6() const;
+
+    void setOutputLineY6(bool outputLineY6);
+
+    bool getOutputLineY7() const;
+
+    void setOutputLineY7(bool outputLineY7);
 
     std::vector<bool> currentState();
 };
