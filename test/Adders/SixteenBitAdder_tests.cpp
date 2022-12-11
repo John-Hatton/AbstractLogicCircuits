@@ -62,7 +62,7 @@ TEST(Sixteen_Bit_Adder, SixteenBitAdder_0000_0000__0000_0000__plus__0000_0000__0
 
     std::vector<bool> actual = mySixteenBitAdder->answer();
 
-    // Four bit Sum + Carry so 0 0000 0000
+    // Four bit Sum + Carry so 0 0000 0000 0000 0000
     std::vector<bool> expected = {false, false, false, false, false, false, false, false, false,
                                   false, false, false, false, false, false, false, false};
     // 3. Test
