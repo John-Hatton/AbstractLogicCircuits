@@ -88,131 +88,131 @@ private:
 
     bool output1;
 public:
-    bool isOutput1() const;
+    bool getOutput1() const;
 
     void setOutput1(bool output1);
 
-    bool isOutput2() const;
+    bool getOutput2() const;
 
     void setOutput2(bool output2);
 
-    bool isOutput3() const;
+    bool getOutput3() const;
 
     void setOutput3(bool output3);
 
-    bool isOutput4() const;
+    bool getOutput4() const;
 
     void setOutput4(bool output4);
 
-    bool isOutput5() const;
+    bool getOutput5() const;
 
     void setOutput5(bool output5);
 
-    bool isOutput6() const;
+    bool getOutput6() const;
 
     void setOutput6(bool output6);
 
-    bool isOutput7() const;
+    bool getOutput7() const;
 
     void setOutput7(bool output7);
 
-    bool isOutput8() const;
+    bool getOutput8() const;
 
     void setOutput8(bool output8);
 
-    bool isOutput9() const;
+    bool getOutput9() const;
 
     void setOutput9(bool output9);
 
-    bool isOutput10() const;
+    bool getOutput10() const;
 
     void setOutput10(bool output10);
 
-    bool isOutput11() const;
+    bool getOutput11() const;
 
     void setOutput11(bool output11);
 
-    bool isOutput12() const;
+    bool getOutput12() const;
 
     void setOutput12(bool output12);
 
-    bool isOutput13() const;
+    bool getOutput13() const;
 
     void setOutput13(bool output13);
 
-    bool isOutput14() const;
+    bool getOutput14() const;
 
     void setOutput14(bool output14);
 
-    bool isOutput15() const;
+    bool getOutput15() const;
 
     void setOutput15(bool output15);
 
-    bool isOutput16() const;
+    bool getOutput16() const;
 
     void setOutput16(bool output16);
 
-    bool isOutput17() const;
+    bool getOutput17() const;
 
     void setOutput17(bool output17);
 
-    bool isOutput18() const;
+    bool getOutput18() const;
 
     void setOutput18(bool output18);
 
-    bool isOutput19() const;
+    bool getOutput19() const;
 
     void setOutput19(bool output19);
 
-    bool isOutput20() const;
+    bool getOutput20() const;
 
     void setOutput20(bool output20);
 
-    bool isOutput21() const;
+    bool getOutput21() const;
 
     void setOutput21(bool output21);
 
-    bool isOutput22() const;
+    bool getOutput22() const;
 
     void setOutput22(bool output22);
 
-    bool isOutput23() const;
+    bool getOutput23() const;
 
     void setOutput23(bool output23);
 
-    bool isOutput24() const;
+    bool getOutput24() const;
 
     void setOutput24(bool output24);
 
-    bool isOutput25() const;
+    bool getOutput25() const;
 
     void setOutput25(bool output25);
 
-    bool isOutput26() const;
+    bool getOutput26() const;
 
     void setOutput26(bool output26);
 
-    bool isOutput27() const;
+    bool getOutput27() const;
 
     void setOutput27(bool output27);
 
-    bool isOutput28() const;
+    bool getOutput28() const;
 
     void setOutput28(bool output28);
 
-    bool isOutput29() const;
+    bool getOutput29() const;
 
     void setOutput29(bool output29);
 
-    bool isOutput30() const;
+    bool getOutput30() const;
 
     void setOutput30(bool output30);
 
-    bool isOutput31() const;
+    bool getOutput31() const;
 
     void setOutput31(bool output31);
 
-    bool isOutput32() const;
+    bool getOutput32() const;
 
     void setOutput32(bool output32);
 
