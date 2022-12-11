@@ -6,6 +6,9 @@
 
 #include "EightBitAdder.h"
 
+/**
+ * The Sixteen Bit Adder Class TODO: .. Finish documentation!!!
+ */
 class SixteenBitAdder {
 
 private:
