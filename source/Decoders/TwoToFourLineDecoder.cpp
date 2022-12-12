@@ -138,11 +138,46 @@ void TwoToFourLineDecoder::setTriNandData3(TriInputNandGate *d3) {
     triNandData3 = d3;
 }
 
+
+bool TwoToFourLineDecoder::getLineOut0() {
+    return lineOut0;
+}
+
+void TwoToFourLineDecoder::setLineOut0(bool lineOut0) {
+    TwoToFourLineDecoder::lineOut0 = lineOut0;
+}
+
+bool TwoToFourLineDecoder::getLineOut1() {
+    return lineOut1;
+}
+
+void TwoToFourLineDecoder::setLineOut1(bool lineOut1) {
+    TwoToFourLineDecoder::lineOut1 = lineOut1;
+}
+
+bool TwoToFourLineDecoder::getLineOut2() {
+    return lineOut2;
+}
+
+void TwoToFourLineDecoder::setLineOut2(bool lineOut2) {
+    TwoToFourLineDecoder::lineOut2 = lineOut2;
+}
+
+bool TwoToFourLineDecoder::getLineOut3() {
+    return lineOut3;
+}
+
+void TwoToFourLineDecoder::setLineOut3(bool lineOut3) {
+    TwoToFourLineDecoder::lineOut3 = lineOut3;
+}
+
 std::vector<bool> TwoToFourLineDecoder::currentState() {
 
 
     selectInputNotX->setInput(inputX);
+    selectInputNotX->answer();
     selectInputNotY->setInput(inputY);
+    selectInputNotY->answer();
 
     selectInputIBX->setInput(selectInputNotX->answer());
     selectInputIBY->setInput(selectInputNotY->answer());
@@ -185,5 +220,3 @@ std::vector<bool> TwoToFourLineDecoder::currentState() {
     // of these drawings are designed to go together, but I have other drawings, not from TI. Lol
     return {!lineOut0,!lineOut1,!lineOut2,!lineOut3};
 }
-
-

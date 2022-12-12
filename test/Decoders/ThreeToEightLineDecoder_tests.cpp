@@ -205,3 +205,23 @@ TEST(Three_to_Eight_Line_Decoder, Three_to_Eight_Line_Decoder_Overloaded_Constru
     EXPECT_EQ(actual,expected);
 
 }
+
+TEST(Three_to_Eight_Line_Decoder, Three_to_Eight_Overloaded___X0_Y1_Z1___WE1____Test)
+{
+
+    // 1. Setup
+
+    auto my3To8LineDecoder = new ThreeToEightLineDecoder({false, true, true}, true);
+
+    std::vector<bool> actual = {};
+    std::vector<bool> expected = {false,false,true,false,false,false,false,false};
+
+
+    actual = my3To8LineDecoder->currentState();
+
+
+    // 3. Test
+
+    EXPECT_EQ(actual,expected);
+
+}

@@ -1,24 +1,16 @@
 //
-// Created by snake on 12/11/2022.
+// Created by physiker on 12/11/2022.
 //
+
 #pragma once
 
 
-#include "TwoToFourLineDecoder.h"
-#include "LogicGates/TriInputAndGate.h"
-#include "TwoToFourDecoder_without_Enable.h"
+#include <vector>
+#include "LogicGates/NotGate.h"
+#include "LogicGates/InvertedBufferGate.h"
+#include "LogicGates/FiveInputNandGate.h"
 
 class FourToSixteenLineDecoder {
-
-    // Write Enable
-
-    // Inputs A-D
-
-    // 2x4 decoder1
-
-    // 2x4 decoder2
-
-    // 0-F (HEX) Tri-INPUT AND Gates (x16)
 
 private:
 
@@ -32,48 +24,77 @@ private:
 
     bool inputD;
 
-    TwoToFourDecoder_without_Enable* decoder2x4One;
+    NotGate* selectInputNotA;
 
-    TwoToFourDecoder_without_Enable* decoder2x4Two;
+    NotGate* selectInputNotB;
 
-    TriInputAndGate* andGate0;
-    TriInputAndGate* andGate1;
-    TriInputAndGate* andGate2;
-    TriInputAndGate* andGate3;
-    TriInputAndGate* andGate4;
-    TriInputAndGate* andGate5;
-    TriInputAndGate* andGate6;
-    TriInputAndGate* andGate7;
-    TriInputAndGate* andGate8;
-    TriInputAndGate* andGate9;
-    TriInputAndGate* andGateA;
-    TriInputAndGate* andGateB;
-    TriInputAndGate* andGateC;
-    TriInputAndGate* andGateD;
-    TriInputAndGate* andGateE;
-    TriInputAndGate* andGateF;
+    NotGate* selectInputNotC;
 
-    bool lineOut0;
-    bool lineOut1;
-    bool lineOut2;
-    bool lineOut3;
-    bool lineOut4;
-    bool lineOut5;
-    bool lineOut6;
-    bool lineOut7;
-    bool lineOut8;
-    bool lineOut9;
-    bool lineOutA;
-    bool lineOutB;
-    bool lineOutC;
-    bool lineOutD;
-    bool lineOutE;
-    bool lineOutF;
+    NotGate* selectInputNotD;
+
+    InvertedBufferGate* selectInputIBA;
+
+    InvertedBufferGate* selectInputIBB;
+
+    InvertedBufferGate* selectInputIBC;
+
+    InvertedBufferGate* selectInputIBD;
+
+    FiveInputNandGate* outNand0;
+
+    FiveInputNandGate* outNand1;
+
+    FiveInputNandGate* outNand2;
+
+    FiveInputNandGate* outNand3;
+
+    FiveInputNandGate* outNand4;
+
+    FiveInputNandGate* outNand5;
+
+    FiveInputNandGate* outNand6;
+
+    FiveInputNandGate* outNand7;
+
+    FiveInputNandGate* outNand8;
+
+    FiveInputNandGate* outNand9;
+
+    FiveInputNandGate* outNand10;
+
+    FiveInputNandGate* outNand11;
+
+    FiveInputNandGate* outNand12;
+
+    FiveInputNandGate* outNand13;
+
+    FiveInputNandGate* outNand14;
+
+    FiveInputNandGate* outNand15;
+
+    bool out0;
+
+    bool out1;
+    bool out2;
+    bool out3;
+    bool out4;
+    bool out5;
+    bool out6;
+    bool out7;
+    bool out8;
+    bool out9;
+    bool out10;
+    bool out11;
+    bool out12;
+    bool out13;
+    bool out14;
+    bool out15;
+
+
 
 public:
 
     FourToSixteenLineDecoder();
-
     FourToSixteenLineDecoder(std::vector<bool> dataInputVector, bool wEnable);
 
     bool getWriteEnable() const;
@@ -96,142 +117,168 @@ public:
 
     void setInputD(bool inputD);
 
-    TwoToFourDecoder_without_Enable *getDecoder2X4One() const;
+    NotGate *getSelectInputNotA() const;
 
-    void setDecoder2X4One(TwoToFourDecoder_without_Enable *decoder2X4One);
+    void setSelectInputNotA(NotGate *selectInputNotA);
 
-    TwoToFourDecoder_without_Enable *getDecoder2X4Two() const;
+    NotGate *getSelectInputNotB() const;
 
-    void setDecoder2X4Two(TwoToFourDecoder_without_Enable *decoder2X4Two);
+    void setSelectInputNotB(NotGate *selectInputNotB);
 
-    TriInputAndGate *getAndGate0() const;
+    NotGate *getSelectInputNotC() const;
 
-    void setAndGate0(TriInputAndGate *andGate0);
+    void setSelectInputNotC(NotGate *selectInputNotC);
 
-    TriInputAndGate *getAndGate1() const;
+    NotGate *getSelectInputNotD() const;
 
-    void setAndGate1(TriInputAndGate *andGate1);
+    void setSelectInputNotD(NotGate *selectInputNotD);
 
-    TriInputAndGate *getAndGate2() const;
+    InvertedBufferGate *getSelectInputIba() const;
 
-    void setAndGate2(TriInputAndGate *andGate2);
+    void setSelectInputIba(InvertedBufferGate *selectInputIba);
 
-    TriInputAndGate *getAndGate3() const;
+    InvertedBufferGate *getSelectInputIbb() const;
 
-    void setAndGate3(TriInputAndGate *andGate3);
+    void setSelectInputIbb(InvertedBufferGate *selectInputIbb);
 
-    TriInputAndGate *getAndGate4() const;
+    InvertedBufferGate *getSelectInputIbc() const;
 
-    void setAndGate4(TriInputAndGate *andGate4);
+    void setSelectInputIbc(InvertedBufferGate *selectInputIbc);
 
-    TriInputAndGate *getAndGate5() const;
+    InvertedBufferGate *getSelectInputIbd() const;
 
-    void setAndGate5(TriInputAndGate *andGate5);
+    void setSelectInputIbd(InvertedBufferGate *selectInputIbd);
 
-    TriInputAndGate *getAndGate6() const;
+    FiveInputNandGate *getOutNand0() const;
 
-    void setAndGate6(TriInputAndGate *andGate6);
+    void setOutNand0(FiveInputNandGate *outNand0);
 
-    TriInputAndGate *getAndGate7() const;
+    FiveInputNandGate *getOutNand1() const;
 
-    void setAndGate7(TriInputAndGate *andGate7);
+    void setOutNand1(FiveInputNandGate *outNand1);
 
-    TriInputAndGate *getAndGate8() const;
+    FiveInputNandGate *getOutNand2() const;
 
-    void setAndGate8(TriInputAndGate *andGate8);
+    void setOutNand2(FiveInputNandGate *outNand2);
 
-    TriInputAndGate *getAndGate9() const;
+    FiveInputNandGate *getOutNand3() const;
 
-    void setAndGate9(TriInputAndGate *andGate9);
+    void setOutNand3(FiveInputNandGate *outNand3);
 
-    TriInputAndGate *getAndGateA() const;
+    FiveInputNandGate *getOutNand4() const;
 
-    void setAndGateA(TriInputAndGate *andGateA);
+    void setOutNand4(FiveInputNandGate *outNand4);
 
-    TriInputAndGate *getAndGateB() const;
+    FiveInputNandGate *getOutNand5() const;
 
-    void setAndGateB(TriInputAndGate *andGateB);
+    void setOutNand5(FiveInputNandGate *outNand5);
 
-    TriInputAndGate *getAndGateC() const;
+    FiveInputNandGate *getOutNand6() const;
 
-    void setAndGateC(TriInputAndGate *andGateC);
+    void setOutNand6(FiveInputNandGate *outNand6);
 
-    TriInputAndGate *getAndGateD() const;
+    FiveInputNandGate *getOutNand7() const;
 
-    void setAndGateD(TriInputAndGate *andGateD);
+    void setOutNand7(FiveInputNandGate *outNand7);
 
-    TriInputAndGate *getAndGateE() const;
+    FiveInputNandGate *getOutNand8() const;
 
-    void setAndGateE(TriInputAndGate *andGateE);
+    void setOutNand8(FiveInputNandGate *outNand8);
 
-    TriInputAndGate *getAndGateF() const;
+    FiveInputNandGate *getOutNand9() const;
 
-    void setAndGateF(TriInputAndGate *andGateF);
+    void setOutNand9(FiveInputNandGate *outNand9);
 
-    bool getLineOut0() const;
+    FiveInputNandGate *getOutNand10() const;
 
-    void setLineOut0(bool lineOut0);
+    void setOutNand10(FiveInputNandGate *outNand10);
 
-    bool getLineOut1() const;
+    FiveInputNandGate *getOutNand11() const;
 
-    void setLineOut1(bool lineOut1);
+    void setOutNand11(FiveInputNandGate *outNand11);
 
-    bool getLineOut2() const;
+    FiveInputNandGate *getOutNand12() const;
 
-    void setLineOut2(bool lineOut2);
+    void setOutNand12(FiveInputNandGate *outNand12);
 
-    bool getLineOut3() const;
+    FiveInputNandGate *getOutNand13() const;
 
-    void setLineOut3(bool lineOut3);
+    void setOutNand13(FiveInputNandGate *outNand13);
 
-    bool getLineOut4() const;
+    FiveInputNandGate *getOutNand14() const;
 
-    void setLineOut4(bool lineOut4);
+    void setOutNand14(FiveInputNandGate *outNand14);
 
-    bool getLineOut5() const;
+    FiveInputNandGate *getOutNand15() const;
 
-    void setLineOut5(bool lineOut5);
+    void setOutNand15(FiveInputNandGate *outNand15);
 
-    bool getLineOut6() const;
+    bool getOut0() const;
 
-    void setLineOut6(bool lineOut6);
+    void setOut0(bool out0);
 
-    bool getLineOut7() const;
+    bool getOut1() const;
 
-    void setLineOut7(bool lineOut7);
+    void setOut1(bool out1);
 
-    bool getLineOut8() const;
+    bool getOut2() const;
 
-    void setLineOut8(bool lineOut8);
+    void setOut2(bool out2);
 
-    bool getLineOut9() const;
+    bool getOut3() const;
 
-    void setLineOut9(bool lineOut9);
+    void setOut3(bool out3);
 
-    bool getLineOutA() const;
+    bool getOut4() const;
 
-    void setLineOutA(bool lineOutA);
+    void setOut4(bool out4);
 
-    bool getLineOutB() const;
+    bool getOut5() const;
 
-    void setLineOutB(bool lineOutB);
+    void setOut5(bool out5);
 
-    bool getLineOutC() const;
+    bool getOut6() const;
 
-    void setLineOutC(bool lineOutC);
+    void setOut6(bool out6);
 
-    bool getLineOutD() const;
+    bool getOut7() const;
 
-    void setLineOutD(bool lineOutD);
+    void setOut7(bool out7);
 
-    bool getLineOutE() const;
+    bool getOut8() const;
 
-    void setLineOutE(bool lineOutE);
+    void setOut8(bool out8);
 
-    bool getLineOutF() const;
+    bool getOut9() const;
 
-    void setLineOutF(bool lineOutF);
+    void setOut9(bool out9);
+
+    bool getOut10() const;
+
+    void setOut10(bool out10);
+
+    bool getOut11() const;
+
+    void setOut11(bool out11);
+
+    bool getOut12() const;
+
+    void setOut12(bool out12);
+
+    bool getOut13() const;
+
+    void setOut13(bool out13);
+
+    bool getOut14() const;
+
+    void setOut14(bool out14);
+
+    bool getOut15() const;
+
+    void setOut15(bool out15);
 
     std::vector<bool> currentState();
+
+
 
 };

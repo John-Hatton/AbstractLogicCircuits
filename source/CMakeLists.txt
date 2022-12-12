@@ -27,4 +27,11 @@ add_library(AbstractCircuits
         LogicGates/TriInputNandGate.cpp
 
 
-        Decoders/ThreeToEightLineDecoder.cpp ../include/Decoders/ThreeToEightLineDecoder.h LogicGates/QuadInputNandGate.cpp ../include/LogicGates/QuadInputNandGate.h LogicGates/TriInvertedAndGate.cpp ../include/LogicGates/TriInvertedAndGate.h Decoders/TwoToFourLineDecoder.cpp ../include/Decoders/TwoToFourLineDecoder.h Decoders/FourToSixteenLineDecoder.cpp ../include/Decoders/FourToSixteenLineDecoder.h Decoders/TwoToFourDecoder_without_Enable.cpp ../include/Decoders/TwoToFourDecoder_without_Enable.h)
+        Decoders/ThreeToEightLineDecoder.cpp
+        LogicGates/QuadInputNandGate.cpp
+        LogicGates/TriInvertedAndGate.cpp
+        Decoders/TwoToFourLineDecoder.cpp
+        Decoders/TwoToFourDecoder_without_Enable.cpp
+        Decoders/FourToSixteenLineDecoder.cpp
+        LogicGates/FiveInputNandGate.cpp
+        )

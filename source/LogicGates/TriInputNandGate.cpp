@@ -5,7 +5,9 @@
 #include "LogicGates/TriInputNandGate.h"
 
 TriInputNandGate::TriInputNandGate() {
-        output = false;
+    // See NAND Truth table.
+    // Only outputs a Zero if all are True.
+    output = true;
 }
 
 bool TriInputNandGate::getInputX() const {

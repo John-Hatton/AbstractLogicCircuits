@@ -4,7 +4,9 @@
 
 #include "LogicGates/NotGate.h"
 
-NotGate::NotGate() = default;
+NotGate::NotGate() {
+
+}
 
 
 bool NotGate::getInput() const {
@@ -17,5 +19,5 @@ void NotGate::setInput(bool in) {
 
 bool NotGate::answer() {
     output = !input;
-    return !input;
+    return output;
 }

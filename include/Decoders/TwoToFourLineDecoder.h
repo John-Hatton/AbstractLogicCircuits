@@ -37,6 +37,10 @@ private:
 
 
     bool lineOut0;
+public:
+
+
+private:
 
     bool lineOut1;
 
@@ -93,6 +97,22 @@ public:
     TriInputNandGate *getTriNandData3() const;
 
     void setTriNandData3(TriInputNandGate *d3);
+
+    bool getLineOut0();
+
+    void setLineOut0(bool lineOut0);
+
+    bool getLineOut1();
+
+    void setLineOut1(bool lineOut1);
+
+    bool getLineOut2();
+
+    void setLineOut2(bool lineOut2);
+
+    bool getLineOut3();
+
+    void setLineOut3(bool lineOut3);
 
     std::vector<bool> currentState();
 };
