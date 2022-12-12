@@ -214,7 +214,7 @@ TEST(Three_to_Eight_Line_Decoder, Three_to_Eight_Overloaded___X0_Y1_Z1___WE1____
     auto my3To8LineDecoder = new ThreeToEightLineDecoder({false, true, true}, true);
 
     std::vector<bool> actual = {};
-    std::vector<bool> expected = {false,false,true,false,false,false,false,false};
+    std::vector<bool> expected = {false,false,false,true,false,false,false,false};
 
 
     actual = my3To8LineDecoder->currentState();
