@@ -185,6 +185,76 @@ TEST(Four_to_Sixteen_Line_Decoder, Four_to_Sixteen_Line_Decoder_wConstructor_D0_
 
 }
 
+TEST(Four_to_Sixteen_Line_Decoder, Four_to_Sixteen_Line_Decoder_wConstructor_D0_C1_B0_A0__WriteEnable1___Test)
+{
+
+    // 1. Setup
+
+    auto myFourToSixteenLineDecoder = new FourToSixteenLineDecoder({false,true,false,false}, true); // 0x4;
+
+    std::vector<bool> actual = {};
+    std::vector<bool> expected = {false,false,false,false,true,false,false,false,
+                                  false,false,false,false,false,false,false,false};
+
+
+    // 2. Code
+
+    actual = myFourToSixteenLineDecoder->currentState();
+
+
+    // 3. Test
+
+    EXPECT_EQ(actual,expected);
+
+}
+
+
+TEST(Four_to_Sixteen_Line_Decoder, Four_to_Sixteen_Line_Decoder_wConstructor_D0_C1_B0_A1__WriteEnable1___Test)
+{
+
+    // 1. Setup
+
+    auto myFourToSixteenLineDecoder = new FourToSixteenLineDecoder({false,true,false,true}, true); // 0x5;
+
+    std::vector<bool> actual = {};
+    std::vector<bool> expected = {false,false,false,false,false,true,false,false,
+                                  false,false,false,false,false,false,false,false};
+
+
+    // 2. Code
+
+    actual = myFourToSixteenLineDecoder->currentState();
+
+
+    // 3. Test
+
+    EXPECT_EQ(actual,expected);
+
+}
+
+TEST(Four_to_Sixteen_Line_Decoder, Four_to_Sixteen_Line_Decoder_wConstructor_D0_C1_B1_A0__WriteEnable1___Test)
+{
+
+    // 1. Setup
+
+    auto myFourToSixteenLineDecoder = new FourToSixteenLineDecoder({false,true,true,false}, true); // 0x6;
+
+    std::vector<bool> actual = {};
+    std::vector<bool> expected = {false,false,false,false,false,false,true,false,
+                                  false,false,false,false,false,false,false,false};
+
+
+    // 2. Code
+
+    actual = myFourToSixteenLineDecoder->currentState();
+
+
+    // 3. Test
+
+    EXPECT_EQ(actual,expected);
+
+}
+
 TEST(Four_to_Sixteen_Line_Decoder, Four_to_Sixteen_Line_Decoder__D0_C1_B1_A1_WriteEnable1____Test) {
 
     // 1. Setup

@@ -43,9 +43,9 @@ ThreeToEightLineDecoder::ThreeToEightLineDecoder(std::vector<bool> dataInputVect
         enableInputG2A = false; // No need to change, because we can just use one switch
         enableInputG2B = false; // See the test cases for more clarity...
 
-        inputA = dataInputVector.at(0);
+        inputA = dataInputVector.at(2);
         inputB = dataInputVector.at(1);
-        inputC = dataInputVector.at(2);
+        inputC = dataInputVector.at(0);
 
         enableNotG1 = new NotGate();
         enableInputs3InvAnd = new TriInvertedAndGate();
