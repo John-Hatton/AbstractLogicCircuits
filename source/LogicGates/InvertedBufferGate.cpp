@@ -18,5 +18,5 @@ void InvertedBufferGate::setInput(bool in) {
 
 bool InvertedBufferGate::answer() {
     output = !input;
-    return !input;
+    return output;
 }

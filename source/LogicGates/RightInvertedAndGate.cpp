@@ -4,9 +4,7 @@
 
 #include "LogicGates/RightInvertedAndGate.h"
 
-RightInvertedAndGate::RightInvertedAndGate() {
-
-}
+RightInvertedAndGate::RightInvertedAndGate() = default;
 
 bool RightInvertedAndGate::getInputX() const {
     return inputX;

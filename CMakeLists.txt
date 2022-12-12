@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
-project(AbstractLogicCircuits)
+project(AbstractLogicCircuits VERSION 0.0.5)
 
 set(CMAKE_CXX_STANDARD 23)
 

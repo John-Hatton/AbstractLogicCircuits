@@ -23,6 +23,16 @@ add_executable(AbstractCircuits_Tests
         Memory/D_FlipFlop_tests.cpp
         Memory/FourBitRAM_tests.cpp
 
-        Adders/FourBitAdder_tests.cpp Adders/EightBitAdder_tests.cpp Adders/SixteenBitAdder_tests.cpp Adders/ThirtyTwoBitAdder_tests.cpp)
+        Adders/FourBitAdder_tests.cpp
+        Adders/EightBitAdder_tests.cpp
+        Adders/SixteenBitAdder_tests.cpp
+        Adders/ThirtyTwoBitAdder_tests.cpp
+        LogicGates/TriInputNandGate_tests.cpp
+        LogicGates/QuadInputNandGate_tests.cpp
+        LogicGates/TriInvertedAndGate_tests.cpp
+        Decoders/ThreeToEightLineDecoder_tests.cpp
+        Decoders/TwoToFourLineDecoder_tests.cpp
+        Decoders/TwoToFourDecoder_without_Enable_tests.cpp
+        LogicGates/FiveInputNandGate_tests.cpp Decoders/FourToSixteenLineDecoder_tests.cpp)
 
 target_link_libraries(AbstractCircuits_Tests AbstractCircuits gtest gtest_main)

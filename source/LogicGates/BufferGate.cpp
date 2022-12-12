@@ -4,9 +4,7 @@
 
 #include "LogicGates/BufferGate.h"
 
-BufferGate::BufferGate() {
-
-}
+BufferGate::BufferGate() = default;
 
 bool BufferGate::getInput() const {
     return input;
