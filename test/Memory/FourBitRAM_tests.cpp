@@ -116,6 +116,43 @@ TEST(FOUR_BIT_RAM, FourBitRAM__WA1_WB1_GW0___RA0_RB0_GR0___data0T_data1T_data2T_
 
 }
 
+TEST(FOUR_BIT_RAM, FourBitRAM__WA1_WB1_GW0___RA1_RB0_GR0___data0T_data1T_data2T_data3T___Out1F_Out2F_Out3F_Out4F__Test)
+{
+
+    // 1. Setup
+
+    auto myFourBitRAM = new FourBitRAM();
+
+    std::vector<bool> actualVector = {};
+    std::vector<bool> expectedVector = {false, false, false, false};
+
+    // 2. Code
+
+    // Four Bit Input (1111)
+    myFourBitRAM->setData0(true);
+    myFourBitRAM->setData1(true);
+    myFourBitRAM->setData2(true);
+    myFourBitRAM->setData3(true);
+
+    // Write Enable Inputs (WA, WB, GW)
+    myFourBitRAM->setWriteInputWa(true);
+    myFourBitRAM->setWriteInputWb(true);
+    myFourBitRAM->setWriteInputGw(true);
+    myFourBitRAM->setWriteInputGw(false);
+
+    myFourBitRAM->setReadInputRa(true);
+    myFourBitRAM->setReadInputRb(false);
+    myFourBitRAM->setReadInputGr(false);
+
+
+    actualVector = myFourBitRAM->currentState();
+
+    // 3. Test
+
+    EXPECT_EQ(actualVector, expectedVector);
+
+}
+
 TEST(FOUR_BIT_RAM, FourBitRAM__WA1_WB1_GW0___RA1_RB1_GR0___data0T_data1T_data2T_data3T___Out1F_Out2F_Out3F_Out4F__Test)
 {
 
@@ -328,5 +365,48 @@ TEST(FOUR_BIT_RAM, FourBitRAM__Multiple_R_W___Test)
     EXPECT_EQ(actualVectorTest2, expectedVectorTest2);
     EXPECT_EQ(actualVectorTest3, expectedVectorTest3);
     EXPECT_EQ(actualVectorTest4, expectedVectorTest4);
+
+}
+
+
+TEST(FOUR_BIT_RAM, FourBitRAM___data3F_data2T_data1F_data0T_wConstructor__addr10_Out4F_Out3T_Out2F_Out1T__Test)
+{
+
+    // 1. Setup
+
+    auto myFourBitRAM = new FourBitRAM({false,true,false,true},{true,false}, true);
+
+    std::vector<bool> actualVector = {};
+    std::vector<bool> expectedVector = {false, true, false, true};
+
+    // 2. Code
+
+
+    actualVector = myFourBitRAM->currentState();
+
+    // 3. Test
+
+    EXPECT_EQ(actualVector, expectedVector);
+
+}
+
+TEST(FOUR_BIT_RAM, FourBitRAM___data3T_data2T_data1F_data0T_wConstructor_addr00__Out4F_Out3T_Out2F_Out1T__Test)
+{
+
+    // 1. Setup
+
+    auto myFourBitRAM = new FourBitRAM({true,true,false,true},{false,false}, true);
+
+    std::vector<bool> actualVector = {};
+    std::vector<bool> expectedVector = {true, true, false, true};
+
+    // 2. Code
+
+
+    actualVector = myFourBitRAM->currentState();
+
+    // 3. Test
+
+    EXPECT_EQ(actualVector, expectedVector);
 
 }
