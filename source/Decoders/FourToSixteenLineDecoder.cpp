@@ -7,7 +7,9 @@
 
 FourToSixteenLineDecoder::FourToSixteenLineDecoder() {
 
+#ifdef DEBUG
     writeEnable = false;
+#endif
 
     selectInputNotA = new NotGate();
     selectInputNotB = new NotGate();
@@ -464,10 +466,10 @@ std::vector<bool> FourToSixteenLineDecoder::currentState() {
 
 
     // 1. Populate NOT Gates
-    selectInputNotA->setInput(inputA);
+    selectInputNotA->setInput(inputA); // Input A is the LSB
     selectInputNotB->setInput(inputB);
     selectInputNotC->setInput(inputC);
-    selectInputNotD->setInput(inputD);
+    selectInputNotD->setInput(inputD); // Input D is the MSB
 
     // 2. Populate IB Gates
 
@@ -476,6 +478,7 @@ std::vector<bool> FourToSixteenLineDecoder::currentState() {
     selectInputIBC->setInput(selectInputNotC->answer());
     selectInputIBD->setInput(selectInputNotD->answer());
 
+#ifdef DEBUG
     if ((selectInputIBA->answer() != inputA) || (selectInputIBB->answer() != inputB)
     || (selectInputIBC->answer() != inputC)|| (selectInputIBD->answer() != inputD))
     {
@@ -484,7 +487,7 @@ std::vector<bool> FourToSixteenLineDecoder::currentState() {
         std::cout << "Something went wrong populating Inverted Buffer Gates or Not Gates for A,B,C, or D." << std::endl;
         abort();
     }
-
+#endif
 
 
 

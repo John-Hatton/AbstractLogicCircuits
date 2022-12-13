@@ -5,7 +5,7 @@
 #include "LogicGates/FiveInputNandGate.h"
 
 FiveInputNandGate::FiveInputNandGate() {
-
+    output = true;
 }
 
 
@@ -63,7 +63,6 @@ bool FiveInputNandGate::answer() {
         output = false;
         return output;
     }
-    output = true;
     return output;
 }
 
