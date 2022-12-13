@@ -383,6 +383,10 @@ public:
      */
     FourBitRAM();
 
+
+    FourBitRAM(std::vector<bool> dataInputVector, std::vector<bool> addressInputVector, bool writeEnable);
+
+
     /**
      * The Get Data 0 function is a standard getter for the internal data0 boolean variable.
      * @return Returns the value of data0.

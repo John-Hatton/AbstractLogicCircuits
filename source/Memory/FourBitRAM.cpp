@@ -105,6 +105,128 @@ FourBitRAM::FourBitRAM() { // Constructor Prologue
 
 } // Constructor Epilogue
 
+
+
+//data1234,//addressbits12, //writeenable
+// This totals 7 bits. We'll give as two vectors and a bool
+
+FourBitRAM::FourBitRAM(std::vector<bool> dataInputVector, std::vector<bool> addressInputVector, bool wEnable)
+{
+    writeInputGW = false;
+    if (dataInputVector.size() == 4 && addressInputVector.size() == 2)
+    {
+
+        data0 = dataInputVector.at(3);
+        data1 = dataInputVector.at(2);
+        data2 = dataInputVector.at(1);
+        data3 = dataInputVector.at(0);
+
+        writeInputWA = addressInputVector.at(1);
+        writeInputWB = addressInputVector.at(0);
+        readInputRA = addressInputVector.at(1);
+        readInputRB = addressInputVector.at(0);
+        readInputGR = false;
+
+        writeInputGW = wEnable;
+
+        // D_FlipFlops
+        wordZeroBitZero      = new D_FlipFlop();
+        wordZeroBitOne       = new D_FlipFlop();
+        wordZeroBitTwo       = new D_FlipFlop();
+        wordZeroBitThree     = new D_FlipFlop();
+        wordOneBitZero       = new D_FlipFlop();
+        wordOneBitOne        = new D_FlipFlop();
+        wordOneBitTwo        = new D_FlipFlop();
+        wordOneBitThree      = new D_FlipFlop();
+        wordTwoBitZero       = new D_FlipFlop();
+        wordTwoBitOne        = new D_FlipFlop();
+        wordTwoBitTwo        = new D_FlipFlop();
+        wordTwoBitThree      = new D_FlipFlop();
+        wordThreeBitZero     = new D_FlipFlop();
+        wordThreeBitOne      = new D_FlipFlop();
+        wordThreeBitTwo      = new D_FlipFlop();
+        wordThreeBitThree    = new D_FlipFlop();
+
+        // Right Inverted And Gates
+
+        leftRIAG  = new RightInvertedAndGate();
+        rightRIAG = new RightInvertedAndGate();
+
+        writeNotA = new NotGate();
+
+        readIBGateRead = new InvertedBufferGate();
+
+        writeInvertedBufferA = new InvertedBufferGate();
+
+        readNotA = new NotGate();
+
+        readNotB = new NotGate();
+
+        readIBGateA = new InvertedBufferGate();
+
+        readIBGateB = new InvertedBufferGate();
+
+
+        // AND Gates
+
+        wordZeroBitZeroAnd   = new AndGate();
+        wordZeroBitOneAnd    = new AndGate();
+        wordZeroBitTwoAnd    = new AndGate();
+        wordZeroBitThreeAnd  = new AndGate();
+        wordOneBitZeroAnd    = new AndGate();
+        wordOneBitOneAnd     = new AndGate();
+        wordOneBitTwoAnd     = new AndGate();
+        wordOneBitThreeAnd   = new AndGate();
+        wordTwoBitZeroAnd    = new AndGate();
+        wordTwoBitOneAnd     = new AndGate();
+        wordTwoBitTwoAnd     = new AndGate();
+        wordTwoBitThreeAnd   = new AndGate();
+        wordThreeBitZeroAnd  = new AndGate();
+        wordThreeBitOneAnd   = new AndGate();
+        wordThreeBitTwoAnd   = new AndGate();
+        wordThreeBitThreeAnd = new AndGate();
+
+        // TriInputAndGates
+
+
+        readDecoderOutputOneAndOne        = new TriInputAndGate();
+        readDecoderOutputOneAndTwo        = new TriInputAndGate();
+        readDecoderOutputOneAndThree      = new TriInputAndGate();
+        readDecoderOutputOneAndFour       = new TriInputAndGate();
+        readDecoderOutputTwoAndOne        = new TriInputAndGate();
+        readDecoderOutputTwoAndTwo        = new TriInputAndGate();
+        readDecoderOutputTwoAndThree      = new TriInputAndGate();
+        readDecoderOutputTwoAndFour       = new TriInputAndGate();
+        readDecoderOutputThreeAndOne      = new TriInputAndGate();
+        readDecoderOutputThreeAndTwo   = new TriInputAndGate();
+        readDecoderOutputThreeAndThree = new TriInputAndGate();
+        readDecoderOutputThreeAndFour  = new TriInputAndGate();
+        readDecoderOutputFourAndOne    = new TriInputAndGate();
+        readDecoderOutputFourAndTwo    = new TriInputAndGate();
+        readDecoderOutputFourAndThree  = new TriInputAndGate();
+        readDecoderOutputFourAndFour   = new TriInputAndGate();
+
+
+
+        // QuadInputNorGates
+
+
+        dataZeroQuadNor  = new QuadInputNorGate();
+        dataOneQuadNor   = new QuadInputNorGate();
+        dataTwoQuadNor   = new QuadInputNorGate();
+        dataThreeQuadNor = new QuadInputNorGate();
+
+        // NandGates
+
+        outputNandOne   = new NandGate();
+        outputNandTwo   = new NandGate();
+        outputNandThree = new NandGate();
+        outputNandFour  = new NandGate();
+
+        currentState();
+    }
+}
+
 bool FourBitRAM::getData0() const {
     return data0;
 }
