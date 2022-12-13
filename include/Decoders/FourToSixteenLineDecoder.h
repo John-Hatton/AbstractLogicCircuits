@@ -75,19 +75,33 @@ private:
     bool out0;
 
     bool out1;
+
     bool out2;
+
     bool out3;
+
     bool out4;
+
     bool out5;
+
     bool out6;
+
     bool out7;
+
     bool out8;
+
     bool out9;
+
     bool out10;
+
     bool out11;
+
     bool out12;
+
     bool out13;
+
     bool out14;
+
     bool out15;
 
 
@@ -95,6 +109,7 @@ private:
 public:
 
     FourToSixteenLineDecoder();
+
     FourToSixteenLineDecoder(std::vector<bool> dataInputVector, bool wEnable);
 
     bool getWriteEnable() const;
@@ -278,7 +293,5 @@ public:
     void setOut15(bool out15);
 
     std::vector<bool> currentState();
-
-
 
 };
